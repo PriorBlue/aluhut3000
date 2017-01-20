@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 495ee965b357a46d4b512f667687498e
+labels:
+- coding
+- c#
+- kvo
+- mvc
+- modelviewcontroller
+- keyvalueobserving
+- objectorientedpattern
+timeCreated: 1433189447
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
