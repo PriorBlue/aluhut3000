@@ -14,7 +14,7 @@ public class UI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Game.Instance.Player.Likes.RegisterObserverScoped(gameObject, (v) =>
+        Game.Instance.Player.Follower.RegisterObserverScoped(gameObject, (v) =>
         {
             Likes.text = string.Format("{0:0.0}", v);
         });
@@ -34,13 +34,13 @@ public class UI : MonoBehaviour
     {
         var player = Game.Instance.Player;
 
-        Info.text = string.Format(@"Madness: {0:0.0}
-LPS: {1:0.0} MPS: {2:0.0}
-Events: {3}
-Hashtags: {4}", 
-player.Madness.get, 
-player.LikesPerSecond.get, 
-player.MadnessPerSecond.get, 
+        Info.text = string.Format(@"
+Follower: {0:0.0}
+FPS: {1:0.0} 
+Events: {2}
+Hashtags: {3}", 
+player.Follower.get,
+player.FollowerPerSecond.get, 
 player.PlannedEvents.get.Count,
 string.Join(",", player.Hashtags.get.Select(it => it.Text).ToArray()));
     }

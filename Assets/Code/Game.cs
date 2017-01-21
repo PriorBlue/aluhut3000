@@ -5,9 +5,6 @@ using UnityEngine;
 using System.Linq;
 using U3D.KVO;
 
-// TODO rename like to followers
-// TODO madness generate followers
-// TODO like adds followers
 // TODO events block multiplier temporary
 // TODO events in seperate time
 // TODO blog posts increase followers
@@ -31,67 +28,13 @@ public class Game : MonoBehaviour
         Instance = this;
 
         Player = new Data.Player();
-        Player.LikesPerSecond.set = 0.1f;
-        Player.MadnessPerSecond.set = 0.01f;
+
+        Player.FollowerPerSecond.set = 0.1f;
         Player.LikeMultiplier.set = 1f;
 
         LoadShopItems();
         LoadPostingsOrEvents();
-        LoadGlobals();
-
-        /*
-        Player.ShopItems.set =
-        {
-            new Data.ShopItem()
-            {
-                Asset = "crap",
-                CostLikes = 10,
-                LikesAdd = 0,
-                LikesPerSecond = 0.1f,
-                MadnessPerSecond = 0.2f,
-                IsTemporary = true,
-                ActiveItemLifetime = 10f,
-                Name = "madness",
-                Type = "blub",
-                LikeMultiplierAddition = 0.1f,
-                MadnessAdd = 1f,
-                Tags = new List<string>() {"maddddness" },
-                Text = "lorem tet lala",                                
-            },
-            new Data.ShopItem()
-            {
-                Asset = "element_reach_001",
-                CostLikes = 20,
-                LikesAdd = 0,
-                LikesPerSecond = 0.1f,
-                MadnessPerSecond = 0.2f,
-                IsTemporary = true,
-                ActiveItemLifetime = 10f,
-                Name = "flat earth",
-                Type = "blub",
-                LikeMultiplierAddition = 0.1f,
-                MadnessAdd = 10f,
-                Tags = new List<string>() {"maddddness" },
-                Text = "lorem tet lala",
-            },
-            new Data.ShopItem()
-            {
-                Asset = "element_reach_001",
-                CostLikes = 50,
-                LikesAdd = 0,
-                LikesPerSecond = 10f,
-                MadnessPerSecond = 1f,
-                IsTemporary = false,
-                ActiveItemLifetime = 0f,
-                Name = "flat earth",
-                Type = "blub",
-                LikeMultiplierAddition = 0.1f,
-                MadnessAdd = 10f,
-                Tags = new List<string>() {"maddddness" },
-                Text = "lorem tet lala",
-            },
-        };
-        */
+        LoadGlobals();        
     }
 
     public void Post()
@@ -125,10 +68,9 @@ public class Game : MonoBehaviour
                 CostLikes = row.GetFloat("CostLikes"),
                 IsTemporary = row.GetBool("IsTemporary"),
                 LikeMultiplierAddition = row.GetFloat("LikeMultiplierAddition"),
+                PostMultiplierAddition = row.GetFloat("PostMultiplierAddition"),
                 LikesAdd = row.GetFloat("LikesAdd"),
                 LikesPerSecond = row.GetFloat("LikesPerSecond"),
-                MadnessAdd = row.GetFloat("MadnessAdd"),
-                MadnessPerSecond = row.GetFloat("MadnessPerSecond"),
                 Name = row.GetString("Name"),
                 Tags = ParseTags(row.GetString("Tags")),
                 Text = row.GetString("Text"),
@@ -139,6 +81,7 @@ public class Game : MonoBehaviour
                 Hashtag = row.GetString("Hashtag"),
                 HashtagUsages = row.GetInt("HashtagUsages"),
                 HashtagUsagesPerSeconds = row.GetFloat("HashtagUsagesPerSeconds"),
+                HashtagFollower = row.GetFloat("HashtagFollower"),
             };
             shopItem.RemainingBuys.set = row.GetInt("RemainingBuys");
 
@@ -222,7 +165,7 @@ public class Game : MonoBehaviour
     public bool CanBuy(Data.ShopItem shopItem)
     {
         return shopItem != null && 
-            Player.Likes.get >= shopItem.CostLikes;
+            Player.Follower.get >= shopItem.CostLikes;
     }
 
     public void Buy(Data.ShopItem shopItem)
@@ -243,7 +186,7 @@ public class Game : MonoBehaviour
             }
 
             // pay
-            Player.Likes.set = Player.Likes.get - shopItem.CostLikes;
+            Player.Follower.set = Player.Follower.get - shopItem.CostLikes;
 
             // hashtags
             if (!string.IsNullOrEmpty(shopItem.Hashtag))
@@ -252,6 +195,7 @@ public class Game : MonoBehaviour
                 {
                     Text = shopItem.Hashtag,
                     UsagesPerSeconds = shopItem.HashtagUsagesPerSeconds,
+                    Follower = shopItem.HashtagFollower,
                 };
                 hi.UsagesLeft.set = shopItem.HashtagUsages;
 
@@ -284,8 +228,9 @@ public class Game : MonoBehaviour
                     Tags = shopItem.Tags,
                     LikesPerSecond = shopItem.LikesPerSecond,
                     Type = shopItem.Type,
-                    MadnessPerSecond = shopItem.MadnessPerSecond,
+                    //MadnessPerSecond = shopItem.MadnessPerSecond,
                     LikeMultiplierAddition = shopItem.LikeMultiplierAddition,
+                    PostMultiplierAddition = shopItem.PostMultiplierAddition,
                     IsTemporary = shopItem.IsTemporary,
                     LifetimeLeft = new U3D.KVO.ValueObserving<float>(),
                     EventTags = shopItem.EventTags,
@@ -297,8 +242,7 @@ public class Game : MonoBehaviour
 
                 Player.ActiveItems.set = l;
 
-                Player.Likes.set = Player.Likes.get + shopItem.LikesAdd;
-                Player.Madness.set = Player.Madness.get + shopItem.MadnessAdd;
+                Player.Follower.set = Player.Follower.get + shopItem.LikesAdd;
             }
         }
     }
@@ -359,7 +303,7 @@ public class Game : MonoBehaviour
 
     public void Like(Data.Posting posting)
     {
-        Player.Likes.set = Player.Likes.get + posting.LikeValue * Player.LikeMultiplier.get;
+        Player.Follower.set = Player.Follower.get + posting.LikeValue * Player.LikeMultiplier.get;
         var l = Player.UnreadPostings.get;
         l.Remove(posting);
         Player.UnreadPostings.set = l;

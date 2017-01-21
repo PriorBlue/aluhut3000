@@ -8,30 +8,19 @@ public class Data
     [System.Serializable]
     public class Player
     {
-        /// <summary>
-        /// money
-        /// </summary>
-        public ValueObserving<float> Likes = new ValueObserving<float>();
-        /// <summary>
-        /// multiplier
-        /// </summary>
-        public ValueObserving<float> Madness = new ValueObserving<float>();
-
-        public ValueObserving<float> LikesPerSecond = new ValueObserving<float>();
-        public ValueObserving<float> MadnessPerSecond = new ValueObserving<float>();
-
-        public ListObserving<ActiveItem> ActiveItems = new ListObserving<ActiveItem>();
-
-        public ListObserving<Posting> UnreadPostings = new ListObserving<Posting>();
+        public ValueObserving<float> Follower = new ValueObserving<float>();
+        public ValueObserving<float> FollowerPerSecond = new ValueObserving<float>();
 
         public ValueObserving<float> LikeMultiplier = new ValueObserving<float>();
+        public ValueObserving<float> PostMultiplier = new ValueObserving<float>();
 
+        public ListObserving<float> MultiplierBlockRemaingTimes = new ListObserving<float>();
+
+        public ListObserving<ActiveItem> ActiveItems = new ListObserving<ActiveItem>();
+        public ListObserving<Posting> UnreadPostings = new ListObserving<Posting>();
         public ListObserving<ShopItem> ShopItems = new ListObserving<ShopItem>();
-
         public ListObserving<PossiblePostingOrEvent> PossiblePostingsOrEvents = new ListObserving<PossiblePostingOrEvent>();
-
         public ListObserving<Event> PlannedEvents = new ListObserving<Event>();
-
         public ListObserving<HashtagInfo> Hashtags = new ListObserving<HashtagInfo>();
 
         public void Update(float deltaT)
@@ -40,21 +29,21 @@ public class Data
             ActiveItems.get.ForEach(it => likeMultiplier += it.LikeMultiplierAddition);
             LikeMultiplier.set = likeMultiplier;
 
-            var lps = LikesPerSecond.get;
-            var mps = MadnessPerSecond.get;
+            float postMultiplier = 1f;
+            ActiveItems.get.ForEach(it => postMultiplier += it.PostMultiplierAddition);
+            PostMultiplier.set = postMultiplier;
 
-            ActiveItems.get.ForEach(it => lps += it.LikesPerSecond);
-            ActiveItems.get.ForEach(it => mps += it.MadnessPerSecond);
+            var fps = FollowerPerSecond.get;
+            ActiveItems.get.ForEach(it => fps += it.LikesPerSecond);
+            Follower.set = Follower.get + fps * Time.deltaTime;
 
             PlannedEvents.get.ForEach(it => it.Timeout -= Time.deltaTime);
 
             Hashtags.get.ForEach(it => it.UsagesLeft.set = it.UsagesLeft.get + Time.deltaTime * it.UsagesPerSeconds);
 
-            Madness.set = Madness.get + mps * Time.deltaTime;
-            Likes.set = Likes.get + lps * Time.deltaTime;
-
             ActiveItems.get.ForEach(it => it.LifetimeLeft.set = Mathf.Max(0f, it.LifetimeLeft.get - Time.deltaTime));
 
+            // remove timeout items
             var l = ActiveItems.get;
             foreach(var it in l.ToArray())
             {
@@ -81,13 +70,11 @@ public class Data
         public float LikesAdd;
         public float LikesPerSecond;
         
-        public float MadnessAdd;
-        public float MadnessPerSecond;
-
         public List<string> Tags = new List<string>();
         public List<string> EventTags = new List<string>();
 
         public float LikeMultiplierAddition;
+        public float PostMultiplierAddition;
 
         public float ActiveItemLifetime;
 
@@ -100,6 +87,7 @@ public class Data
         public string Hashtag;
         public int HashtagUsages;
         public float HashtagUsagesPerSeconds;
+        public float HashtagFollower;
     }
     
     [System.Serializable]
@@ -112,9 +100,9 @@ public class Data
         public string Type;
 
         public float LikeMultiplierAddition;
+        public float PostMultiplierAddition;
 
         public float LikesPerSecond;
-        public float MadnessPerSecond;
 
         public List<string> Tags = new List<string>();
         public List<string> EventTags = new List<string>();
@@ -130,6 +118,7 @@ public class Data
         public string Text;
         public ValueObserving<float> UsagesLeft = new ValueObserving<float>();
         public float UsagesPerSeconds;
+        public float Follower;
 
         public ValueObserving<bool> IsGettingUsed = new ValueObserving<bool>();
     }
