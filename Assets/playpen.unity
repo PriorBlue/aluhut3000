@@ -4000,6 +4000,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprites:
   - {fileID: 21300000, guid: ec1d09e333a8df748af3b6e09d7df3c5, type: 3}
+  - {fileID: 21300000, guid: 14ca72afbf4fb6f49b1e1bb8da7b7636, type: 3}
+  - {fileID: 21300000, guid: a898165a21a2e1542a7be84a44ad1cb8, type: 3}
+  - {fileID: 21300000, guid: 8480d3c8eff07814ba016515b5f8a482, type: 3}
+  - {fileID: 21300000, guid: 84db0d655803fd24d9a4f29f675acf45, type: 3}
+  - {fileID: 21300000, guid: abe2b3a23e1b02d4f861914f82fed003, type: 3}
+  - {fileID: 21300000, guid: db7872056051da2428bb3612d23bda1e, type: 3}
+  - {fileID: 21300000, guid: 2dd0d71c9973d244bbc5cc5825451b37, type: 3}
 --- !u!1001 &1773080715
 Prefab:
   m_ObjectHideFlags: 0
@@ -4268,6 +4275,7 @@ MonoBehaviour:
   ShopItemsCsv: {fileID: 4900000, guid: dd7cea179bf79a24eadf1ee891230eb6, type: 3}
   PostingsOrEventsCsv: {fileID: 4900000, guid: 9ea26cf632fde38469b23305f4ecc782, type: 3}
   GlobalsCsv: {fileID: 4900000, guid: 135d6b8d38ad9434c8b79cd51f9b46bf, type: 3}
+  TimeScale: 1
 --- !u!4 &1822361539
 Transform:
   m_ObjectHideFlags: 0

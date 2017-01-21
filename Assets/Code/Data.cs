@@ -30,11 +30,18 @@ public class Data
             LikeMultiplier.set = likeMultiplier;
 
             float postMultiplier = 1f;
-            ActiveItems.get.ForEach(it => postMultiplier += it.PostMultiplierAddition);
+            if (MultiplierBlockRemaingTimes.get.Count == 0)
+            {
+                ActiveItems.get.ForEach(it => postMultiplier += it.PostMultiplierAddition);    
+            }
             PostMultiplier.set = postMultiplier;
 
             var fps = FollowerPerSecond.get;
-            ActiveItems.get.ForEach(it => fps += it.LikesPerSecond);
+            if (MultiplierBlockRemaingTimes.get.Count == 0)
+            {
+                ActiveItems.get.ForEach(it => fps += it.LikesPerSecond);
+
+            }
             Follower.set = Follower.get + fps * Time.deltaTime;
 
             PlannedEvents.get.ForEach(it => it.Timeout -= Time.deltaTime);
@@ -42,17 +49,28 @@ public class Data
             Hashtags.get.ForEach(it => it.UsagesLeft.set = it.UsagesLeft.get + Time.deltaTime * it.UsagesPerSeconds);
 
             ActiveItems.get.ForEach(it => it.LifetimeLeft.set = Mathf.Max(0f, it.LifetimeLeft.get - Time.deltaTime));
-
             // remove timeout items
-            var l = ActiveItems.get;
-            foreach(var it in l.ToArray())
             {
-                if (it.IsTemporary && it.LifetimeLeft.get <= 0f)
+                var l = ActiveItems.get;
+                foreach(var it in l.ToArray())
                 {
-                    l.Remove(it);
+                    if (it.IsTemporary && it.LifetimeLeft.get <= 0f)
+                    {
+                        l.Remove(it);
+                    }
                 }
+                ActiveItems.set = l;
             }
-            ActiveItems.set = l;
+
+            {
+                var l = MultiplierBlockRemaingTimes.get;
+                for(int i = 0; i < l.Count; ++i)
+                {
+                    l[i] -= Time.deltaTime;
+                }
+                l.RemoveAll(it => it <= 0f);
+                MultiplierBlockRemaingTimes.set = l;
+            }
         }
     }
 
@@ -138,6 +156,7 @@ public class Data
         public string Asset;
         public float Timeout;
         public List<string> Tags = new List<string>();
+        public float BlockTime;
     }
 
     [System.Serializable]
@@ -154,6 +173,7 @@ public class Data
         public string EventAsset;
         public List<string> EventTags = new List<string>();
         public float EventTimeout;
+        public float EventBlockTime;
 
         public Posting CreatePosting()
         {
@@ -173,6 +193,7 @@ public class Data
                 Tags = EventTags,
                 Text = EventText,
                 Timeout = EventTimeout,
+                BlockTime = EventBlockTime,
             };
         }
     }

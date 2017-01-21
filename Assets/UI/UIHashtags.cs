@@ -21,7 +21,6 @@ public class UIHashtags : MonoBehaviour
                     var go = GameObject.Instantiate(Prefab) as GameObject;
                     go.GetComponent<UIHashtag>().HashtagInfo = it;
                     go.transform.SetParent(transform);
-
                 }
             }
         });

@@ -5,9 +5,7 @@ using UnityEngine;
 using System.Linq;
 using U3D.KVO;
 
-// TODO events block multiplier temporary
 // TODO events in seperate time
-// TODO blog posts increase followers
 
 public class Game : MonoBehaviour
 {
@@ -17,6 +15,8 @@ public class Game : MonoBehaviour
     public TextAsset GlobalsCsv;
 
     public Data.Player Player;
+
+    public float TimeScale = 1f;
 
     private float timeoutPosting = 1f;
     private int maxUnreadPostings = 100;
@@ -43,13 +43,13 @@ public class Game : MonoBehaviour
         var hashtags = l.Where(it => it.IsGettingUsed.get).ToList();
 
         hashtags.ForEach(it => it.UsagesLeft.set = it.UsagesLeft.get - 1f);
-
-        foreach (var it in l)
-        {
-            it.IsGettingUsed.set = false;
-        }
-
+        
         Player.Hashtags.set = l;
+
+        float follower = 0f;
+        hashtags.ForEach(it => follower += it.Follower);
+
+        Player.Follower.set = Player.Follower.get + follower * Player.PostMultiplier.get;
     }
 
     private void LoadShopItems()
@@ -120,6 +120,7 @@ public class Game : MonoBehaviour
                 EventTags = ParseTags(row.GetString("EventTags")),
                 EventText = row.GetString("EventText"),
                 EventTimeout = row.GetFloat("EventTimeout"),
+                EventBlockTime = row.GetFloat("EventBlockTime"),
                 Hashtags = ParseTags(row.GetString("Hashtags")),
                 IsEvent = row.GetBool("IsEvent"),
                 LikeValue = row.GetFloat("LikeValue"),
@@ -198,6 +199,7 @@ public class Game : MonoBehaviour
                     Follower = shopItem.HashtagFollower,
                 };
                 hi.UsagesLeft.set = shopItem.HashtagUsages;
+                hi.IsGettingUsed.set = true;
 
                 var l = Player.Hashtags.get;
                 var existing = l.FirstOrDefault(it => it.Text == hi.Text);
@@ -266,6 +268,8 @@ public class Game : MonoBehaviour
 
     void Update()
     {
+        Time.timeScale = TimeScale;
+
         Player.Update(Time.deltaTime);
 
         var events = Player.PlannedEvents.get;
@@ -299,6 +303,9 @@ public class Game : MonoBehaviour
     {
         Messenger.Broadcast<string>("toast", ev.Text);
         player.LikeMultiplier.set = 1f;
+        var l = player.MultiplierBlockRemaingTimes.get;
+        l.Add(ev.BlockTime);
+        player.MultiplierBlockRemaingTimes.set = l;
     }
 
     public void Like(Data.Posting posting)
