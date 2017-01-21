@@ -18,6 +18,7 @@ public class UIShopItem : MonoBehaviour {
         TextBuys.text = string.Format("{0}", ShopItem.RemainingBuys.get);
         TextBuys.gameObject.SetActive(!ShopItem.IsUnlimited);
         Image.sprite = SpriteFactory.Instance.Get(ShopItem.Asset);
+        TextCost.color = Game.Instance.CanBuy(ShopItem) ? Color.green : Color.red;
     }
 
     // Use this for initialization
