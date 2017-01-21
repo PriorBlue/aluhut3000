@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Game : MonoBehaviour
 {
     public static Game Instance = null;
+    public TextAsset ShopItemsCsv;
 
     public Data.Player Player;
 
@@ -23,7 +25,36 @@ public class Game : MonoBehaviour
         Player.MadnessPerSecond.set = 0.01f;
         Player.LikeMultiplier.set = 1f;
 
-        Player.ShopItems.set = new List<Data.ShopItem>()
+        var csvReader = new CsvReader();
+        csvReader.Load('\n', ';', '"', ShopItemsCsv.text);
+
+        {
+            var l = new List<Data.ShopItem>();
+
+            foreach (var row in csvReader.EnumDataRows())
+            {
+                l.Add(new Data.ShopItem()
+                {
+                    Asset = row.GetString("Asset"),
+                    ActiveItemLifetime = row.GetFloat("ActiveItemLifetime"),
+                    CostLikes = row.GetFloat("CostLikes"),
+                    IsTemporary= row.GetBool("IsTemporary"),
+                    LikeMultiplierAddition = row.GetFloat("LikeMultiplierAddition"),
+                    LikesAdd = row.GetFloat("LikesAdd"),
+                    LikesPerSecond = row.GetFloat("LikesPerSecond"),
+                    MadnessAdd = row.GetFloat("MadnessAdd"),
+                    MadnessPerSecond = row.GetFloat("MadnessPerSecond"),
+                    Name = row.GetString("Name"),
+                    Tags = row.GetString("Tags").Split(new char[] { ',', ' '}).Select(it => it.Trim()).ToList(),
+                    Text = row.GetString("Text"),
+                    Type = row.GetString("Type"),
+                });
+            }
+
+            Player.ShopItems.set = l;
+        }
+        /*
+        Player.ShopItems.set =
         {
             new Data.ShopItem()
             {
@@ -74,6 +105,7 @@ public class Game : MonoBehaviour
                 Text = "lorem tet lala",
             },
         };
+        */
     }
 
     IEnumerator Start()

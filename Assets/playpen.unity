@@ -3098,6 +3098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6df25f7d63eca147adff2851df29986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShopItemsCsv: {fileID: 4900000, guid: dd7cea179bf79a24eadf1ee891230eb6, type: 3}
   TimeoutPosting: 0.5
   MaxUnreadPostings: 100
   PostingLikeValueMin: 1
