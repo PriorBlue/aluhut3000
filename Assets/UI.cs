@@ -34,7 +34,8 @@ public class UI : MonoBehaviour
         var player = Game.Instance.Player;
 
         Info.text = string.Format(@"Madness: {0:0.0}
-LPS: {1:0.0} MPS: {2:0.0}", 
-player.Madness.get, player.LikesPerSecond.get, player.MadnessPerSecond.get);
+LPS: {1:0.0} MPS: {2:0.0}
+Events: {3}", 
+player.Madness.get, player.LikesPerSecond.get, player.MadnessPerSecond.get, player.PlannedEvents.get.Count);
     }
 }

@@ -28,6 +28,10 @@ public class Data
 
         public ListObserving<ShopItem> ShopItems = new ListObserving<ShopItem>();
 
+        public ListObserving<PossiblePostingOrEvent> PossiblePostingsOrEvents = new ListObserving<PossiblePostingOrEvent>();
+
+        public ListObserving<Event> PlannedEvents = new ListObserving<Event>();
+
         public void Update(float deltaT)
         {
             float likeMultiplier = 1f;
@@ -39,6 +43,8 @@ public class Data
 
             ActiveItems.get.ForEach(it => lps += it.LikesPerSecond);
             ActiveItems.get.ForEach(it => mps += it.MadnessPerSecond);
+
+            PlannedEvents.get.ForEach(it => it.Timeout -= Time.deltaTime);
 
             Madness.set = Madness.get + mps * Time.deltaTime;
             Likes.set = Likes.get + lps * Time.deltaTime;
@@ -75,6 +81,7 @@ public class Data
         public float MadnessPerSecond;
 
         public List<string> Tags = new List<string>();
+        public List<string> EventTags = new List<string>();
 
         public float LikeMultiplierAddition;
 
@@ -102,6 +109,7 @@ public class Data
         public float MadnessPerSecond;
 
         public List<string> Tags = new List<string>();
+        public List<string> EventTags = new List<string>();
 
         public ValueObserving<float> LifetimeLeft;
 
@@ -124,10 +132,49 @@ public class Data
         public string Text;
     }
 
+    [System.Serializable]
     public class Event
     {
         public string Text;
+        public string Asset;
         public float Timeout;
         public List<string> Tags = new List<string>();
+    }
+
+    [System.Serializable]
+    public class PossiblePostingOrEvent
+    {
+        public string Text;
+        public float LikeValue;
+        public List<string> Hashtags = new List<string>();
+        public int RandomWeight;
+
+        public bool IsEvent;
+
+        public string EventText;
+        public string EventAsset;
+        public List<string> EventTags = new List<string>();
+        public float EventTimeout;
+
+        public Posting CreatePosting()
+        {
+            return new Posting()
+            {
+                Hashtags = Hashtags,
+                LikeValue = LikeValue,
+                Text = Text,
+            };
+        }
+
+        public Event CreateEvent()
+        {
+            return new Event()
+            {
+                Asset = EventAsset,
+                Tags = EventTags,
+                Text = EventText,
+                Timeout = EventTimeout,
+            };
+        }
     }
 }

@@ -3099,6 +3099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopItemsCsv: {fileID: 4900000, guid: dd7cea179bf79a24eadf1ee891230eb6, type: 3}
+  PostingsOrEventsCsv: {fileID: 4900000, guid: 9ea26cf632fde38469b23305f4ecc782, type: 3}
   TimeoutPosting: 0.5
   MaxUnreadPostings: 100
   PostingLikeValueMin: 1

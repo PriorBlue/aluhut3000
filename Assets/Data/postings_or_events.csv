@@ -1,0 +1,8 @@
+Text;LikeValue;Hashtags;RandomWeight;IsEvent;EventText;EventAsset;EventTags;EventTimeout
+lala is dead;1;lala, dead;10;FALSE;;;;
+bela is dead;1;lala, bela;1;TRUE;bela is dead;;dead;60
+aliens probed;1;alien, probe;1;TRUE;aliens;;alien;30
+Reptilienwesen beherrschen die Erde!;1;reptilien;10;FALSE;;;;
+Chemtrails, Segen oder Fluch?;1;chemtrails;10;FALSE;;;;
+Die Lüge von der festen Erde;1;erde;10;FALSE;;;;
+Chemtrails für nächste Woche geplant;1;chemtrails;1;TRUE;Chemtrails sind da;;chemtrails;120

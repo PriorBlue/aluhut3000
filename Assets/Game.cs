@@ -9,6 +9,7 @@ public class Game : MonoBehaviour
 {
     public static Game Instance = null;
     public TextAsset ShopItemsCsv;
+    public TextAsset PostingsOrEventsCsv;
 
     public Data.Player Player;
 
@@ -26,39 +27,9 @@ public class Game : MonoBehaviour
         Player.MadnessPerSecond.set = 0.01f;
         Player.LikeMultiplier.set = 1f;
 
-        var csvReader = new CsvReader();
-        csvReader.Load('\n', ';', '"', ShopItemsCsv.text);
+        LoadShopItems();
+        LoadPostingsOrEvents();
 
-        {
-            var l = new List<Data.ShopItem>();
-
-            foreach (var row in csvReader.EnumDataRows())
-            {
-                var shopItem = new Data.ShopItem()
-                {
-                    Asset = row.GetString("Asset"),
-                    ActiveItemLifetime = row.GetFloat("ActiveItemLifetime"),
-                    CostLikes = row.GetFloat("CostLikes"),
-                    IsTemporary = row.GetBool("IsTemporary"),
-                    LikeMultiplierAddition = row.GetFloat("LikeMultiplierAddition"),
-                    LikesAdd = row.GetFloat("LikesAdd"),
-                    LikesPerSecond = row.GetFloat("LikesPerSecond"),
-                    MadnessAdd = row.GetFloat("MadnessAdd"),
-                    MadnessPerSecond = row.GetFloat("MadnessPerSecond"),
-                    Name = row.GetString("Name"),
-                    Tags = row.GetString("Tags").Split(new char[] { ',', ' ' }).Select(it => it.Trim()).ToList(),
-                    Text = row.GetString("Text"),
-                    Type = row.GetString("Type"),
-                    IsUnlimited = row.GetBool("IsUnlimited"),
-                    RemainingBuys = new ValueObserving<int>(),
-                };
-                shopItem.RemainingBuys.set = row.GetInt("RemainingBuys");
-
-                l.Add(shopItem);
-            }
-
-            Player.ShopItems.set = l;
-        }
         /*
         Player.ShopItems.set =
         {
@@ -114,8 +85,92 @@ public class Game : MonoBehaviour
         */
     }
 
+    private void LoadShopItems()
+    {
+        var csvReader = new CsvReader();
+        csvReader.Load('\n', ';', '"', ShopItemsCsv.text);
+
+        var l = new List<Data.ShopItem>();
+
+        foreach (var row in csvReader.EnumDataRows())
+        {
+            var shopItem = new Data.ShopItem()
+            {
+                Asset = row.GetString("Asset"),
+                ActiveItemLifetime = row.GetFloat("ActiveItemLifetime"),
+                CostLikes = row.GetFloat("CostLikes"),
+                IsTemporary = row.GetBool("IsTemporary"),
+                LikeMultiplierAddition = row.GetFloat("LikeMultiplierAddition"),
+                LikesAdd = row.GetFloat("LikesAdd"),
+                LikesPerSecond = row.GetFloat("LikesPerSecond"),
+                MadnessAdd = row.GetFloat("MadnessAdd"),
+                MadnessPerSecond = row.GetFloat("MadnessPerSecond"),
+                Name = row.GetString("Name"),
+                Tags = ParseTags(row.GetString("Tags")),
+                Text = row.GetString("Text"),
+                Type = row.GetString("Type"),
+                IsUnlimited = row.GetBool("IsUnlimited"),
+                RemainingBuys = new ValueObserving<int>(),
+                EventTags = ParseTags(row.GetString("EventTags")),
+            };
+            shopItem.RemainingBuys.set = row.GetInt("RemainingBuys");
+
+            l.Add(shopItem);
+        }
+
+        Player.ShopItems.set = l;
+    }
+
+    private void LoadPostingsOrEvents()
+    {
+        var csvReader = new CsvReader();
+        csvReader.Load('\n', ';', '"', PostingsOrEventsCsv.text);
+
+        var l = new List<Data.PossiblePostingOrEvent>();
+
+        foreach (var row in csvReader.EnumDataRows())
+        {
+            var item = new Data.PossiblePostingOrEvent()
+            {
+                Text = row.GetString("Text"),
+                EventAsset = row.GetString("EventAsset"),
+                EventTags = ParseTags(row.GetString("EventTags")),
+                EventText = row.GetString("EventText"),
+                EventTimeout = row.GetFloat("EventTimeout"),
+                Hashtags = ParseTags(row.GetString("Hashtags")),
+                IsEvent = row.GetBool("IsEvent"),
+                LikeValue = row.GetFloat("LikeValue"),
+                RandomWeight = row.GetInt("RandomWeight"),
+            };
+
+            l.Add(item);
+        }
+
+        Player.PossiblePostingsOrEvents.set = l;
+    }
+
+    public bool AnyMatchingTag(List<string> tagsA, List<string> tagsB)
+    {
+        if (tagsA != null && tagsB != null)
+        {
+            foreach(var it in tagsA)
+            {
+                if (tagsB.Contains(it)) return true;
+            }
+        }
+
+        return false;
+    }
+
+    private List<string> ParseTags(string tags)
+    {
+        return tags.Split(new char[] { ',', ' ' }).Select(it => it.Trim()).ToList();
+    }
+
     IEnumerator Start()
     {
+        Messenger.AddListener<string>("toast", gameObject, (text) => Debug.Log(text, gameObject));
+
         while (true) {
             if (Player.UnreadPostings.get.Count < MaxUnreadPostings) CreatePosting();
             yield return new WaitForSeconds(TimeoutPosting);
@@ -163,6 +218,7 @@ public class Game : MonoBehaviour
                     LikeMultiplierAddition = shopItem.LikeMultiplierAddition,
                     IsTemporary = shopItem.IsTemporary,
                     LifetimeLeft = new U3D.KVO.ValueObserving<float>(),
+                    EventTags = shopItem.EventTags,
                 };
                 it.LifetimeLeft.set = shopItem.ActiveItemLifetime;
                 l.Add(it);
@@ -178,18 +234,55 @@ public class Game : MonoBehaviour
     public void CreatePosting()
     {
         var l = Player.UnreadPostings.get;
-        l.Add(new Data.Posting()
+
+        var possible = RandomHelper.PickWeightedRandom(Player.PossiblePostingsOrEvents.get, (it => it.RandomWeight));
+
+        l.Add(possible.CreatePosting());
+        if (possible.IsEvent)
         {
-            LikeValue = UnityEngine.Random.Range(PostingLikeValueMin, PostingLikeValueMax),
-            Hashtags = new List<string>() { "lala" },
-            Text = "lorem ipsum",
-        });
+            var el = Player.PlannedEvents.get;
+            el.Add(possible.CreateEvent());
+            Player.PlannedEvents.set = el;
+        }
+        
         Player.UnreadPostings.set = l;
     }
 
     void Update()
     {
         Player.Update(Time.deltaTime);
+
+        var events = Player.PlannedEvents.get;
+        foreach(var ev in events.ToArray())
+        {
+            if (ev.Timeout <= 0f)
+            {
+                var preventedBy = Player.ActiveItems.get.FirstOrDefault(it => AnyMatchingTag(it.EventTags, ev.Tags));
+                if (preventedBy != null)
+                {
+                    PreventEvent(Player, ev, preventedBy);
+                }
+                else
+                {
+                    ExecuteEvent(Player, ev);
+                }
+
+                events.Remove(ev);
+            }
+        }
+
+        Player.PlannedEvents.set = events;
+    }
+
+    private void PreventEvent(Data.Player player, Data.Event ev, Data.ActiveItem preventedBy)
+    {
+        Messenger.Broadcast<string>("toast", "PREVENTED: " + ev.Text);
+    }
+
+    private void ExecuteEvent(Data.Player player, Data.Event ev)
+    {
+        Messenger.Broadcast<string>("toast", ev.Text);
+        player.LikeMultiplier.set = 1f;
     }
 
     public void Like(Data.Posting posting)
