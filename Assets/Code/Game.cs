@@ -20,8 +20,6 @@ public class Game : MonoBehaviour
     private float timeoutPostingMax = 5f;
 
     private int maxUnreadPostings = 100;
-    private float postingLikeValueMin = 1f;
-    private float postingLikeValueMax = 5f;
 
     private float eventTimeoutMin = 1f;
     private float eventTimeoutMax = 5f;
@@ -105,8 +103,6 @@ public class Game : MonoBehaviour
         timeoutPostingMin = row.GetFloat("timeoutPostingMin");
         timeoutPostingMax = row.GetFloat("timeoutPostingMax");
         maxUnreadPostings = row.GetInt("maxUnreadPostings");
-        postingLikeValueMin = row.GetFloat("postingLikeValueMin");
-        postingLikeValueMax = row.GetFloat("postingLikeValueMax");
 }
 
     private void LoadPostingsOrEvents()
