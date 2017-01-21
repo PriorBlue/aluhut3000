@@ -22,6 +22,42 @@ public class Game : MonoBehaviour
         Player.LikesPerSecond.set = 0.1f;
         Player.MadnessPerSecond.set = 0.01f;
         Player.LikeMultiplier.set = 1f;
+
+        Player.ShopItems.set = new List<Data.ShopItem>()
+        {
+            new Data.ShopItem()
+            {
+                Asset = "crap",
+                CostLikes = 10,
+                LikesAdd = 0,
+                LikesPerSecond = 0.1f,
+                MadnessPerSecond = 0.2f,
+                IsTemporary = true,
+                ActiveItemLifetime = 10f,
+                Name = "madness",
+                Type = "blub",
+                LikeMultiplierAddition = 0.1f,
+                MadnessAdd = 1f,
+                Tags = new List<string>() {"maddddness" },
+                Text = "lorem tet lala",                                
+            },
+            new Data.ShopItem()
+            {
+                Asset = "element_reach_001",
+                CostLikes = 20,
+                LikesAdd = 0,
+                LikesPerSecond = 0.1f,
+                MadnessPerSecond = 0.2f,
+                IsTemporary = true,
+                ActiveItemLifetime = 10f,
+                Name = "flat earth",
+                Type = "blub",
+                LikeMultiplierAddition = 0.1f,
+                MadnessAdd = 10f,
+                Tags = new List<string>() {"maddddness" },
+                Text = "lorem tet lala",
+            }
+        };
     }
 
     IEnumerator Start()
@@ -32,6 +68,47 @@ public class Game : MonoBehaviour
         }
     }
 
+    public void Buy(Data.ShopItem shopItem)
+    {
+        if (Player.Likes.get >= shopItem.CostLikes)
+        {
+            // remove from shop
+            {
+                var l = Player.ShopItems.get;
+                l.Remove(shopItem);
+                Player.ShopItems.set = l;
+            }
+
+            // pay
+            Player.Likes.set = Player.Likes.get - shopItem.CostLikes;
+
+            // add active items
+            {
+                var l = Player.ActiveItems.get;
+                var it = new Data.ActiveItem()
+                {
+                    Asset = shopItem.Asset,
+                    Name = shopItem.Name,
+                    Text = shopItem.Text,
+                    Tags = shopItem.Tags,
+                    LikesPerSecond = shopItem.LikesPerSecond,
+                    Type = shopItem.Type,
+                    MadnessPerSecond = shopItem.MadnessPerSecond,
+                    LikeMultiplierAddition = shopItem.LikeMultiplierAddition,
+                    IsTemporary = shopItem.IsTemporary,
+                    LifetimeLeft = new U3D.KVO.ValueObserving<float>(),
+                };
+                it.LifetimeLeft.set = shopItem.ActiveItemLifetime;
+                l.Add(it);
+
+                Player.ActiveItems.set = l;
+
+                Player.Likes.set = Player.Likes.get + shopItem.LikesAdd;
+                Player.Madness.set = Player.Madness.get + shopItem.MadnessAdd;
+            }
+        }
+    }
+
     public void CreatePosting()
     {
         var l = Player.UnreadPostings.get;
@@ -39,6 +116,7 @@ public class Game : MonoBehaviour
         {
             LikeValue = UnityEngine.Random.Range(PostingLikeValueMin, PostingLikeValueMax),
             Hashtags = new List<string>() { "lala" },
+            Text = "lorem ipsum",
         });
         Player.UnreadPostings.set = l;
     }

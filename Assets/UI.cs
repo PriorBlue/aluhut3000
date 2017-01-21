@@ -11,7 +11,8 @@ public class UI : MonoBehaviour
     public Text LikeMultiplier;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         Game.Instance.Player.Madness.RegisterObserverScoped(gameObject, (v) =>
         {
             Madness.text = string.Format("Madness: {0:0.0}", v);
@@ -19,22 +20,17 @@ public class UI : MonoBehaviour
 
         Game.Instance.Player.Likes.RegisterObserverScoped(gameObject, (v) =>
         {
-            Likes.text = string.Format("Likes: {0:0.0}", v);
+            Likes.text = string.Format("{0:0.0}", v);
         });
 
         Game.Instance.Player.UnreadPostings.RegisterObserverScoped(gameObject, (vOld, vNew) =>
         {
-            Unread.text = string.Format("Unread: {0:0.0}", vNew.Count);
+            Unread.text = string.Format("{0:0}", vNew.Count);
         });
 
         Game.Instance.Player.LikeMultiplier.RegisterObserverScoped(gameObject, (v) =>
         {
-            LikeMultiplier.text = string.Format("LikeMultiplier: {0:0.0}", v);
+            LikeMultiplier.text = string.Format("x {0:0.0}", v);
         });
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

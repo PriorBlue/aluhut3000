@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using U3D.KVO;
 using UnityEngine;
 
 public class Data
@@ -24,16 +25,29 @@ public class Data
         public U3D.KVO.ListObserving<Posting> UnreadPostings = new U3D.KVO.ListObserving<Posting>();
 
         public U3D.KVO.ValueObserving<float> LikeMultiplier = new U3D.KVO.ValueObserving<float>();
-        
+
+        public U3D.KVO.ListObserving<ShopItem> ShopItems = new U3D.KVO.ListObserving<ShopItem>();
+
         public void Update(float deltaT)
         {
             float likeMultiplier = 1f;
             ActiveItems.get.ForEach(it => likeMultiplier += it.LikeMultiplierAddition);
-            ActiveItems.get.ForEach(it => it.MadnessPerSecond.Add(deltaT, ref Madness));
-            ActiveItems.get.ForEach(it => it.LikesPerSecond.Add(deltaT, ref Likes));
+            LikeMultiplier.set = likeMultiplier;
 
             Madness.set = Madness.get + MadnessPerSecond.get * Time.deltaTime;
             Likes.set = Likes.get + LikesPerSecond.get * Time.deltaTime;
+
+            ActiveItems.get.ForEach(it => it.LifetimeLeft.set = Mathf.Max(0f, it.LifetimeLeft.get - Time.deltaTime));
+
+            var l = ActiveItems.get;
+            foreach(var it in l.ToArray())
+            {
+                if (it.IsTemporary && it.LifetimeLeft.get <= 0f)
+                {
+                    l.Remove(it);
+                }
+            }
+            ActiveItems.set = l;
         }
     }
 
@@ -49,33 +63,20 @@ public class Data
         public float CostLikes;
 
         public float LikesAdd;
-        public ValuePerSecond LikesPerSecond = new ValuePerSecond();
-
+        public float LikesPerSecond;
+        
         public float MadnessAdd;
-        public ValuePerSecond MadnessPerSecond = new ValuePerSecond();
+        public float MadnessPerSecond;
+
+        public List<string> Tags = new List<string>();
+
+        public float LikeMultiplierAddition;
+
+        public float ActiveItemLifetime;
+
+        public bool IsTemporary;
     }
-
-    // [System.Serializable]
-    public class ValuePerSecond
-    {
-        public float PerSecond;
-        public float DurationLeft;
-
-        public void Add(float deltaT, ref U3D.KVO.ValueObserving<float> v)
-        {
-            var f = v.get;
-            Add(deltaT, ref f);
-            v.set = f;
-        }
-
-        public void Add(float deltaT, ref float v)
-        {
-            var dt = Mathf.Max(deltaT, DurationLeft);
-            DurationLeft -= dt;
-            v += PerSecond * dt;
-        }
-    }
-
+    
     // [System.Serializable]
     public class ActiveItem
     {
@@ -87,10 +88,14 @@ public class Data
 
         public float LikeMultiplierAddition;
 
-        public ValuePerSecond LikesPerSecond = new ValuePerSecond();
-        public ValuePerSecond MadnessPerSecond = new ValuePerSecond();
+        public float LikesPerSecond;
+        public float MadnessPerSecond;
 
         public List<string> Tags = new List<string>();
+
+        public U3D.KVO.ValueObserving<float> LifetimeLeft;
+
+        public bool IsTemporary;
     }
 
     // [System.Serializable]
@@ -106,6 +111,7 @@ public class Data
     {
         public List<string> Hashtags = new List<string>();
         public float LikeValue;
+        public string Text;
     }
 
     public class Event

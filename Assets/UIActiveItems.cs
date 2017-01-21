@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIPostings : MonoBehaviour
-{
+public class UIActiveItems : MonoBehaviour {
     public GameObject Prefab;
 
-	// Use this for initialization
-	void Start () {
-        Game.Instance.Player.UnreadPostings.RegisterObserverScoped(gameObject, (lOld, lNew) =>
+    // Use this for initialization
+    void Start()
+    {
+        Game.Instance.Player.ActiveItems.RegisterObserverScoped(gameObject, (lOld, lNew) =>
         {
             foreach (Transform it in transform) GameObject.Destroy(it.gameObject);
             foreach (var it in lNew)
             {
                 var go = GameObject.Instantiate(Prefab) as GameObject;
-                go.GetComponent<UIPosting>().Posting = it;
+                go.GetComponent<UIActiveItem>().ActiveItem = it;
                 go.transform.SetParent(transform);
             }
         });
-	}
+    }
 }
