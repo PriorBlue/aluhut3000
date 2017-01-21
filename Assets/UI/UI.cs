@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class UI : MonoBehaviour
 {
@@ -35,7 +36,12 @@ public class UI : MonoBehaviour
 
         Info.text = string.Format(@"Madness: {0:0.0}
 LPS: {1:0.0} MPS: {2:0.0}
-Events: {3}", 
-player.Madness.get, player.LikesPerSecond.get, player.MadnessPerSecond.get, player.PlannedEvents.get.Count);
+Events: {3}
+Hashtags: {4}", 
+player.Madness.get, 
+player.LikesPerSecond.get, 
+player.MadnessPerSecond.get, 
+player.PlannedEvents.get.Count,
+string.Join(",", player.Hashtags.get.Select(it => it.Text).ToArray()));
     }
 }

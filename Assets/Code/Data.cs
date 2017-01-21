@@ -32,6 +32,8 @@ public class Data
 
         public ListObserving<Event> PlannedEvents = new ListObserving<Event>();
 
+        public ListObserving<HashtagInfo> Hashtags = new ListObserving<HashtagInfo>();
+
         public void Update(float deltaT)
         {
             float likeMultiplier = 1f;
@@ -45,6 +47,8 @@ public class Data
             ActiveItems.get.ForEach(it => mps += it.MadnessPerSecond);
 
             PlannedEvents.get.ForEach(it => it.Timeout -= Time.deltaTime);
+
+            Hashtags.get.ForEach(it => it.UsagesLeft.set = it.UsagesLeft.get + Time.deltaTime * it.UsagesPerSeconds);
 
             Madness.set = Madness.get + mps * Time.deltaTime;
             Likes.set = Likes.get + lps * Time.deltaTime;
@@ -92,6 +96,10 @@ public class Data
         public bool IsUnlimited;
 
         public ValueObserving<int> RemainingBuys = new ValueObserving<int>();
+
+        public string Hashtag;
+        public int HashtagUsages;
+        public float HashtagUsagesPerSeconds;
     }
     
     [System.Serializable]
@@ -117,11 +125,13 @@ public class Data
     }
 
     [System.Serializable]
-    public class HashtahInfo
+    public class HashtagInfo
     {
         public string Text;
-        public float UsagesLeft;
+        public ValueObserving<float> UsagesLeft = new ValueObserving<float>();
         public float UsagesPerSeconds;
+
+        public ValueObserving<bool> IsGettingUsed = new ValueObserving<bool>();
     }
 
     [System.Serializable]

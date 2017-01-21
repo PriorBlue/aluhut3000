@@ -85,6 +85,11 @@ public class Game : MonoBehaviour
         */
     }
 
+    public void Post()
+    {
+        
+    }
+
     private void LoadShopItems()
     {
         var csvReader = new CsvReader();
@@ -112,6 +117,9 @@ public class Game : MonoBehaviour
                 IsUnlimited = row.GetBool("IsUnlimited"),
                 RemainingBuys = new ValueObserving<int>(),
                 EventTags = ParseTags(row.GetString("EventTags")),
+                Hashtag = row.GetString("Hashtag"),
+                HashtagUsages = row.GetInt("HashtagUsages"),
+                HashtagUsagesPerSeconds = row.GetFloat("HashtagUsagesPerSeconds"),
             };
             shopItem.RemainingBuys.set = row.GetInt("RemainingBuys");
 
@@ -170,6 +178,8 @@ public class Game : MonoBehaviour
     IEnumerator Start()
     {
         Messenger.AddListener<string>("toast", gameObject, (text) => Debug.Log(text, gameObject));
+        Messenger.AddListener<Data.ActiveItem>("new_item", gameObject, (it) => Debug.Log(it.Text, gameObject));
+        Messenger.AddListener<Data.HashtagInfo>("new_hashtag", gameObject, (it) => Debug.Log(it.Text, gameObject));
 
         while (true) {
             if (Player.UnreadPostings.get.Count < MaxUnreadPostings) CreatePosting();
@@ -203,6 +213,34 @@ public class Game : MonoBehaviour
             // pay
             Player.Likes.set = Player.Likes.get - shopItem.CostLikes;
 
+            // hashtags
+            if (!string.IsNullOrEmpty(shopItem.Hashtag))
+            {
+                var hi = new Data.HashtagInfo()
+                {
+                    Text = shopItem.Hashtag,
+                    UsagesPerSeconds = shopItem.HashtagUsagesPerSeconds,
+                };
+                hi.UsagesLeft.set = shopItem.HashtagUsages;
+
+                var l = Player.Hashtags.get;
+                var existing = l.FirstOrDefault(it => it.Text == hi.Text);
+                if (existing == null)
+                {
+                    // add hashtag info
+                    l.Add(hi);
+                }
+                else
+                {
+                    // merge hashtag info
+                    existing.UsagesLeft.set = existing.UsagesLeft.get + hi.UsagesLeft.get;
+                    existing.UsagesPerSeconds = (existing.UsagesPerSeconds + hi.UsagesPerSeconds) / 2f;
+                }
+                Player.Hashtags.set = l;
+
+                Messenger.Broadcast<Data.HashtagInfo>("new_hashtag", hi);
+            }
+
             // add active items
             {
                 var l = Player.ActiveItems.get;
@@ -222,6 +260,8 @@ public class Game : MonoBehaviour
                 };
                 it.LifetimeLeft.set = shopItem.ActiveItemLifetime;
                 l.Add(it);
+
+                Messenger.Broadcast<Data.ActiveItem>("new_item", it);
 
                 Player.ActiveItems.set = l;
 

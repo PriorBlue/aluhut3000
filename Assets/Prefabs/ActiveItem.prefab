@@ -191,6 +191,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d828660f459e224890d3db4708c243b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveItem:
+    Name: 
+    Text: 
+    Asset: 
+    Type: 
+    LikeMultiplierAddition: 0
+    LikesPerSecond: 0
+    MadnessPerSecond: 0
+    Tags: []
+    EventTags: []
+    IsTemporary: 0
   Text: {fileID: 114748240081003920}
   Image: {fileID: 114748796252893218}
 --- !u!114 &114960651428859942

@@ -1,14 +1,15 @@
-Name;Text;Asset;Type;CostLikes;LikesAdd;LikesPerSecond;MadnessAdd;MadnessPerSecond;Tags;LikeMultiplierAddition;ActiveItemLifetime;IsTemporary;IsUnlimited;RemainingBuys;EventTags
-crap;even more crap;element_reach_001;;10;0;0;1;0;la,lu;0;0;FALSE;TRUE;1;
-crap;even more crap;element_reach_001;;20;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-crap;even more crap;element_reach_001;;30;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-crap;even more crap;element_reach_001;;40;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-crap;even more crap;element_reach_001;;50;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-crap;even more crap;element_reach_001;;60;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-crap;even more crap;element_reach_001;;70;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-crap;even more crap;element_reach_001;;80;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-crap;even more crap;element_reach_001;;90;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-crap;even more crap;element_reach_001;;100;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-crap;even more crap;element_reach_001;;110;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-crap;even more crap;element_reach_001;;120;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;
-alien;alien txt;;;1;0;0;1;0;la,lu;0;60;TRUE;TRUE;0;alien
+Name;Text;Asset;Type;CostLikes;LikesAdd;LikesPerSecond;MadnessAdd;MadnessPerSecond;Tags;LikeMultiplierAddition;ActiveItemLifetime;IsTemporary;IsUnlimited;RemainingBuys;EventTags;Hashtag;HashtagUsages;HashtagUsagesPerSeconds
+crap;even more crap;element_reach_001;;10;0;0;1;0;la,lu;0;0;FALSE;TRUE;1;;;;
+crap;even more crap;element_reach_001;;20;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+crap;even more crap;element_reach_001;;30;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+crap;even more crap;element_reach_001;;40;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+crap;even more crap;element_reach_001;;50;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+crap;even more crap;element_reach_001;;60;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+crap;even more crap;element_reach_001;;70;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+crap;even more crap;element_reach_001;;80;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+crap;even more crap;element_reach_001;;90;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+crap;even more crap;element_reach_001;;100;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+crap;even more crap;element_reach_001;;110;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+crap;even more crap;element_reach_001;;120;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
+alien;alien txt;;;1;0;0;1;0;la,lu;0;60;TRUE;TRUE;0;alien;;;
+hashtag;alien brain found;;hashtag;2;0;0;1;0;alien;0;0;FALSE;TRUE;0;;alien;10;0
