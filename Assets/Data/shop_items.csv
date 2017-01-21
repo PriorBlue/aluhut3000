@@ -1,16 +1,16 @@
-Name;Text;Asset;Type;CostLikes;LikesAdd;LikesPerSecond;MadnessAdd;MadnessPerSecond;Tags;LikeMultiplierAddition;ActiveItemLifetime;IsTemporary;IsUnlimited;RemainingBuys;EventTags;Hashtag;HashtagUsages;HashtagUsagesPerSeconds
-crap;even more crap;element_reach_001;;10;0;0;1;0;la,lu;0;0;FALSE;TRUE;1;;;;
-crap;even more crap;element_reach_001;;20;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-crap;even more crap;element_reach_001;;30;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-crap;even more crap;element_reach_001;;40;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-crap;even more crap;element_reach_001;;50;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-crap;even more crap;element_reach_001;;60;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-crap;even more crap;element_reach_001;;70;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-crap;even more crap;element_reach_001;;80;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-crap;even more crap;element_reach_001;;90;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-crap;even more crap;element_reach_001;;100;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-crap;even more crap;element_reach_001;;110;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-crap;even more crap;element_reach_001;;120;0;0;1;0;la,lu;0;0;FALSE;FALSE;1;;;;
-alien;alien txt;;;1;0;0;1;0;la,lu;0;60;TRUE;TRUE;0;alien;;;
-hashtag;alien brain found;;hashtag;2;0;0;1;0;alien;0;0;FALSE;TRUE;0;;alien;10;0
-hashtag;alien brownies;;hashtag;3;0;0;1;0;alien;0;0;FALSE;TRUE;0;;brownies;5;0
+Name;Text;Asset;Type;CostLikes;FollowerAdd;FollowerPerSecond;OBSOLETE_MadnessAdd;OBSOLETE_MadnessPerSecond;Tags;PostMultiplierAddition;LikeMultiplierAddition;ActiveItemLifetime;IsTemporary;IsUnlimited;RemainingBuys;EventTags;Hashtag;HashtagUsages;HashtagUsagesPerSeconds;HashtagFollower
+Essigessenz;Hilft beim natürlich auflösen von Chemtrails, Standard in jedem Haushalt. Ermöglicht Thema #Chemtrails;element_reach_001;Hashtag;10;1000;3;1;0;la,lu;0;0;0;FALSE;TRUE;1;;;;;
+Alufolie;Kann zur direkten Abwehr von Gehirnwellenauslesen genutzt werden. Macht aber auch einen warmen Kopf. Du kannst endlich über #Echelon schreiben;hashtag_item00;Hashtag;20;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+Alufolie, mit Waben;Besserer Schutz Gegen Gedankenlesen, kann wiederverwendet werden. Endlich mehr über #Echelon schreiben!;hashtag_item01;Hashtag;1;0;10;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+Reptiloidenschuppe I;Beweis dafür, dass Herbert Witzelsbul der CSU aus Memmimgen ein Reptiloid ist. Tapfer bei einer Wahlkampfveranstaltung errungen. Erlaubt Tweets zu #Reptiloiden;hashtag_item02;Hashtag;40;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+crap;even more crap;hashtag_item03;;50;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+crap;even more crap;hashtag_item04;;60;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+crap;even more crap;hashtag_item05;;70;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+crap;even more crap;hashtag_item06;;80;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+crap;even more crap;element_reach_001;;90;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+crap;even more crap;element_reach_001;;100;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+crap;even more crap;element_reach_001;;110;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+crap;even more crap;element_reach_001;;120;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
+alien;alien txt;;;1;0;0;1;0;la,lu;0;0;60;TRUE;TRUE;0;alien;;;;
+hashtag;alien brain found;;hashtag;2;0;0;1;0;alien;0;0;0;FALSE;TRUE;0;;alien;10;0;1
+hashtag;alien brownies;;hashtag;3;0;0;1;0;alien;0;0;0;FALSE;TRUE;0;;brownies;5;0;10
