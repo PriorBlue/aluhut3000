@@ -5,18 +5,26 @@ using UnityEngine;
 using System.Linq;
 using U3D.KVO;
 
+// TODO rename like to followers
+// TODO madness generate followers
+// TODO like adds followers
+// TODO events block multiplier temporary
+// TODO events in seperate time
+// TODO blog posts increase followers
+
 public class Game : MonoBehaviour
 {
     public static Game Instance = null;
     public TextAsset ShopItemsCsv;
     public TextAsset PostingsOrEventsCsv;
+    public TextAsset GlobalsCsv;
 
     public Data.Player Player;
 
-    public float TimeoutPosting = 1f;
-    public int MaxUnreadPostings = 100;
-    public float PostingLikeValueMin = 1f;
-    public float PostingLikeValueMax = 5f;
+    private float timeoutPosting = 1f;
+    private int maxUnreadPostings = 100;
+    private float postingLikeValueMin = 1f;
+    private float postingLikeValueMax = 5f;
 
     void Awake()
     {
@@ -29,6 +37,7 @@ public class Game : MonoBehaviour
 
         LoadShopItems();
         LoadPostingsOrEvents();
+        LoadGlobals();
 
         /*
         Player.ShopItems.set =
@@ -139,6 +148,19 @@ public class Game : MonoBehaviour
         Player.ShopItems.set = l;
     }
 
+
+    private void LoadGlobals()
+    {
+        var csvReader = new CsvReader();
+        csvReader.Load('\n', ';', '"', GlobalsCsv.text);
+        var row = csvReader.EnumDataRows().First();
+
+        timeoutPosting = row.GetFloat("timeoutPosting");
+        maxUnreadPostings = row.GetInt("maxUnreadPostings");
+        postingLikeValueMin = row.GetFloat("postingLikeValueMin");
+        postingLikeValueMax = row.GetFloat("postingLikeValueMax");
+}
+
     private void LoadPostingsOrEvents()
     {
         var csvReader = new CsvReader();
@@ -192,8 +214,8 @@ public class Game : MonoBehaviour
         Messenger.AddListener<Data.HashtagInfo>("new_hashtag", gameObject, (it) => Debug.Log(it.Text, gameObject));
 
         while (true) {
-            if (Player.UnreadPostings.get.Count < MaxUnreadPostings) CreatePosting();
-            yield return new WaitForSeconds(TimeoutPosting);
+            if (Player.UnreadPostings.get.Count < maxUnreadPostings) CreatePosting();
+            yield return new WaitForSeconds(timeoutPosting);
         }
     }
 

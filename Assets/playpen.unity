@@ -4267,10 +4267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopItemsCsv: {fileID: 4900000, guid: dd7cea179bf79a24eadf1ee891230eb6, type: 3}
   PostingsOrEventsCsv: {fileID: 4900000, guid: 9ea26cf632fde38469b23305f4ecc782, type: 3}
-  TimeoutPosting: 0.5
-  MaxUnreadPostings: 100
-  PostingLikeValueMin: 1
-  PostingLikeValueMax: 5
+  GlobalsCsv: {fileID: 4900000, guid: 135d6b8d38ad9434c8b79cd51f9b46bf, type: 3}
 --- !u!4 &1822361539
 Transform:
   m_ObjectHideFlags: 0
