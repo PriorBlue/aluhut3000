@@ -23,6 +23,9 @@ public class Game : MonoBehaviour
     private float postingLikeValueMin = 1f;
     private float postingLikeValueMax = 5f;
 
+    private float eventTimeoutMin = 1f;
+    private float eventTimeoutMax = 5f;
+
     void Awake()
     {
         Instance = this;
@@ -268,6 +271,16 @@ public class Game : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) TimeScale = 1f;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) TimeScale = 2f;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) TimeScale = 4f;
+        if (Input.GetKeyDown(KeyCode.Alpha4)) TimeScale = 8f;
+        if (Input.GetKeyDown(KeyCode.Alpha5)) TimeScale = 16f;
+        if (Input.GetKeyDown(KeyCode.Alpha6)) TimeScale = 32f;
+        if (Input.GetKeyDown(KeyCode.Alpha7)) TimeScale = 64f;
+        if (Input.GetKeyDown(KeyCode.Alpha8)) TimeScale = 100f;
+        if (Input.GetKeyDown(KeyCode.Alpha9)) TimeScale = 100f;
+        if (Input.GetKeyDown(KeyCode.Alpha0)) TimeScale = 0f;
         Time.timeScale = TimeScale;
 
         Player.Update(Time.deltaTime);
