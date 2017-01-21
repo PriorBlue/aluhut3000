@@ -87,7 +87,17 @@ public class Game : MonoBehaviour
 
     public void Post()
     {
-        
+        var l = Player.Hashtags.get;
+        var hashtags = l.Where(it => it.IsGettingUsed.get).ToList();
+
+        hashtags.ForEach(it => it.UsagesLeft.set = it.UsagesLeft.get - 1f);
+
+        foreach (var it in l)
+        {
+            it.IsGettingUsed.set = false;
+        }
+
+        Player.Hashtags.set = l;
     }
 
     private void LoadShopItems()

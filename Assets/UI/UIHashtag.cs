@@ -9,12 +9,14 @@ public class UIHashtag : MonoBehaviour {
     public Text Text;
     public Text TextUsagesLeft;
     public Button ButtonUse;
+    public Image ImageUsed;
 
     void Refresh()
     {
         if (HashtagInfo == null) return;
         Text.text = string.Format("{0}", HashtagInfo.Text);
         TextUsagesLeft.text = string.Format("{0}", HashtagInfo.UsagesLeft.get);
+        ImageUsed.gameObject.SetActive(HashtagInfo.IsGettingUsed.get);
     }
 
     // Use this for initialization
