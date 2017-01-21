@@ -36,11 +36,17 @@ public class UI : MonoBehaviour
 
         Info.text = string.Format(@"
 Follower: {0:0.0}
-FPS: {1:0.0} 
-Events: {2}
-Hashtags: {3}", 
+FollowerPerSecond: {1:0.0}
+LikeMultiplier: x {2:0.0} 
+PostMultiplier: x {3:0.0} 
+Blocks: {4} 
+Events: {5}
+Hashtags: {6}", 
 player.Follower.get,
-player.FollowerPerSecond.get, 
+player.EffectiveFollowerPerSecond.get,
+player.LikeMultiplier.get,
+player.PostMultiplier.get,
+player.MultiplierBlockRemaingTimes.get.Count,
 player.PlannedEvents.get.Count,
 string.Join(",", player.Hashtags.get.Select(it => it.Text).ToArray()));
     }

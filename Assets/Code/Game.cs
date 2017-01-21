@@ -5,8 +5,6 @@ using UnityEngine;
 using System.Linq;
 using U3D.KVO;
 
-// TODO events in seperate time
-
 public class Game : MonoBehaviour
 {
     public static Game Instance = null;
@@ -18,7 +16,9 @@ public class Game : MonoBehaviour
 
     public float TimeScale = 1f;
 
-    private float timeoutPosting = 1f;
+    private float timeoutPostingMin = 1f;
+    private float timeoutPostingMax = 5f;
+
     private int maxUnreadPostings = 100;
     private float postingLikeValueMin = 1f;
     private float postingLikeValueMax = 5f;
@@ -32,8 +32,9 @@ public class Game : MonoBehaviour
 
         Player = new Data.Player();
 
-        Player.FollowerPerSecond.set = 0.1f;
+        Player.BaseFollowerPerSecond.set = 0f;
         Player.LikeMultiplier.set = 1f;
+        Player.PostMultiplier.set = 1f;
 
         LoadShopItems();
         LoadPostingsOrEvents();
@@ -72,8 +73,8 @@ public class Game : MonoBehaviour
                 IsTemporary = row.GetBool("IsTemporary"),
                 LikeMultiplierAddition = row.GetFloat("LikeMultiplierAddition"),
                 PostMultiplierAddition = row.GetFloat("PostMultiplierAddition"),
-                LikesAdd = row.GetFloat("LikesAdd"),
-                LikesPerSecond = row.GetFloat("LikesPerSecond"),
+                FollowerAdd = row.GetFloat("FollowerAdd"),
+                FollowerPerSecond = row.GetFloat("FollowerPerSecond"),
                 Name = row.GetString("Name"),
                 Tags = ParseTags(row.GetString("Tags")),
                 Text = row.GetString("Text"),
@@ -101,7 +102,8 @@ public class Game : MonoBehaviour
         csvReader.Load('\n', ';', '"', GlobalsCsv.text);
         var row = csvReader.EnumDataRows().First();
 
-        timeoutPosting = row.GetFloat("timeoutPosting");
+        timeoutPostingMin = row.GetFloat("timeoutPostingMin");
+        timeoutPostingMax = row.GetFloat("timeoutPostingMax");
         maxUnreadPostings = row.GetInt("maxUnreadPostings");
         postingLikeValueMin = row.GetFloat("postingLikeValueMin");
         postingLikeValueMax = row.GetFloat("postingLikeValueMax");
@@ -154,15 +156,31 @@ public class Game : MonoBehaviour
         return tags.Split(new char[] { ',', ' ' }).Select(it => it.Trim()).ToList();
     }
 
-    IEnumerator Start()
+    void Start()
     {
         Messenger.AddListener<string>("toast", gameObject, (text) => Debug.Log(text, gameObject));
         Messenger.AddListener<Data.ActiveItem>("new_item", gameObject, (it) => Debug.Log(it.Text, gameObject));
         Messenger.AddListener<Data.HashtagInfo>("new_hashtag", gameObject, (it) => Debug.Log(it.Text, gameObject));
 
-        while (true) {
-            if (Player.UnreadPostings.get.Count < maxUnreadPostings) CreatePosting();
-            yield return new WaitForSeconds(timeoutPosting);
+        StartCoroutine(CoPosts());
+        StartCoroutine(CoEvents());
+    }
+
+    private IEnumerator CoPosts()
+    {
+        while (true)
+        {
+            if (Player.UnreadPostings.get.Count < maxUnreadPostings) CreatePosting(it => !it.IsEvent);
+            yield return new WaitForSeconds(UnityEngine.Random.Range(timeoutPostingMin, timeoutPostingMax));
+        }
+    }
+
+    private IEnumerator CoEvents()
+    {
+        while (true)
+        {
+            if (Player.UnreadPostings.get.Count < maxUnreadPostings) CreatePosting(it => it.IsEvent);
+            yield return new WaitForSeconds(UnityEngine.Random.Range(eventTimeoutMin, eventTimeoutMax));
         }
     }
 
@@ -231,7 +249,7 @@ public class Game : MonoBehaviour
                     Name = shopItem.Name,
                     Text = shopItem.Text,
                     Tags = shopItem.Tags,
-                    LikesPerSecond = shopItem.LikesPerSecond,
+                    FollowerPerSecond = shopItem.FollowerPerSecond,
                     Type = shopItem.Type,
                     //MadnessPerSecond = shopItem.MadnessPerSecond,
                     LikeMultiplierAddition = shopItem.LikeMultiplierAddition,
@@ -247,18 +265,21 @@ public class Game : MonoBehaviour
 
                 Player.ActiveItems.set = l;
 
-                Player.Follower.set = Player.Follower.get + shopItem.LikesAdd;
+                Player.Follower.set = Player.Follower.get + shopItem.FollowerAdd;
             }
         }
     }
 
-    public void CreatePosting()
+    public void CreatePosting(System.Func<Data.PossiblePostingOrEvent, bool> filter)
     {
         var l = Player.UnreadPostings.get;
 
-        var possible = RandomHelper.PickWeightedRandom(Player.PossiblePostingsOrEvents.get, (it => it.RandomWeight));
+        var possible = RandomHelper.PickWeightedRandom(
+            Player.PossiblePostingsOrEvents.get.Where(it => filter == null || filter(it)), 
+            (it => it.RandomWeight));
 
         l.Add(possible.CreatePosting());
+
         if (possible.IsEvent)
         {
             var el = Player.PlannedEvents.get;

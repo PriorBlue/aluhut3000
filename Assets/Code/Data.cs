@@ -9,7 +9,8 @@ public class Data
     public class Player
     {
         public ValueObserving<float> Follower = new ValueObserving<float>();
-        public ValueObserving<float> FollowerPerSecond = new ValueObserving<float>();
+        public ValueObserving<float> BaseFollowerPerSecond = new ValueObserving<float>();
+        public ValueObserving<float> EffectiveFollowerPerSecond = new ValueObserving<float>();
 
         public ValueObserving<float> LikeMultiplier = new ValueObserving<float>();
         public ValueObserving<float> PostMultiplier = new ValueObserving<float>();
@@ -25,6 +26,7 @@ public class Data
 
         public void Update(float deltaT)
         {
+            // update multiplier
             float likeMultiplier = 1f;
             ActiveItems.get.ForEach(it => likeMultiplier += it.LikeMultiplierAddition);
             LikeMultiplier.set = likeMultiplier;
@@ -36,13 +38,15 @@ public class Data
             }
             PostMultiplier.set = postMultiplier;
 
-            var fps = FollowerPerSecond.get;
+            // update follower per second and followers
+            var fps = BaseFollowerPerSecond.get;
             if (MultiplierBlockRemaingTimes.get.Count == 0)
             {
-                ActiveItems.get.ForEach(it => fps += it.LikesPerSecond);
+                ActiveItems.get.ForEach(it => fps += it.FollowerPerSecond);
 
             }
             Follower.set = Follower.get + fps * Time.deltaTime;
+            EffectiveFollowerPerSecond.set = fps;
 
             PlannedEvents.get.ForEach(it => it.Timeout -= Time.deltaTime);
 
@@ -85,8 +89,8 @@ public class Data
 
         public float CostLikes;
 
-        public float LikesAdd;
-        public float LikesPerSecond;
+        public float FollowerAdd;
+        public float FollowerPerSecond;
         
         public List<string> Tags = new List<string>();
         public List<string> EventTags = new List<string>();
@@ -120,7 +124,7 @@ public class Data
         public float LikeMultiplierAddition;
         public float PostMultiplierAddition;
 
-        public float LikesPerSecond;
+        public float FollowerPerSecond;
 
         public List<string> Tags = new List<string>();
         public List<string> EventTags = new List<string>();
