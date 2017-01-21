@@ -266,6 +266,7 @@ public class Game : MonoBehaviour
                 Player.ActiveItems.set = l;
 
                 Player.Follower.set = Player.Follower.get + shopItem.FollowerAdd;
+                Player.BaseFollowerPerSecond.set = Player.BaseFollowerPerSecond.get + shopItem.FollowerPerSecond;
             }
         }
     }
