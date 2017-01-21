@@ -11,22 +11,22 @@ public class Data
         /// <summary>
         /// money
         /// </summary>
-        public U3D.KVO.ValueObserving<float> Likes = new U3D.KVO.ValueObserving<float>();
+        public ValueObserving<float> Likes = new ValueObserving<float>();
         /// <summary>
         /// multiplier
         /// </summary>
-        public U3D.KVO.ValueObserving<float> Madness = new U3D.KVO.ValueObserving<float>();
+        public ValueObserving<float> Madness = new ValueObserving<float>();
 
-        public U3D.KVO.ValueObserving<float> LikesPerSecond = new U3D.KVO.ValueObserving<float>();
-        public U3D.KVO.ValueObserving<float> MadnessPerSecond = new U3D.KVO.ValueObserving<float>();
+        public ValueObserving<float> LikesPerSecond = new ValueObserving<float>();
+        public ValueObserving<float> MadnessPerSecond = new ValueObserving<float>();
 
-        public U3D.KVO.ListObserving<ActiveItem> ActiveItems = new U3D.KVO.ListObserving<ActiveItem>();
+        public ListObserving<ActiveItem> ActiveItems = new ListObserving<ActiveItem>();
 
-        public U3D.KVO.ListObserving<Posting> UnreadPostings = new U3D.KVO.ListObserving<Posting>();
+        public ListObserving<Posting> UnreadPostings = new ListObserving<Posting>();
 
-        public U3D.KVO.ValueObserving<float> LikeMultiplier = new U3D.KVO.ValueObserving<float>();
+        public ValueObserving<float> LikeMultiplier = new ValueObserving<float>();
 
-        public U3D.KVO.ListObserving<ShopItem> ShopItems = new U3D.KVO.ListObserving<ShopItem>();
+        public ListObserving<ShopItem> ShopItems = new ListObserving<ShopItem>();
 
         public void Update(float deltaT)
         {
@@ -81,6 +81,10 @@ public class Data
         public float ActiveItemLifetime;
 
         public bool IsTemporary;
+
+        public bool IsUnlimited;
+
+        public ValueObserving<int> RemainingBuys = new ValueObserving<int>();
     }
     
     [System.Serializable]
@@ -99,7 +103,7 @@ public class Data
 
         public List<string> Tags = new List<string>();
 
-        public U3D.KVO.ValueObserving<float> LifetimeLeft;
+        public ValueObserving<float> LifetimeLeft;
 
         public bool IsTemporary;
     }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using U3D.KVO;
 
 public class Game : MonoBehaviour
 {
@@ -33,22 +34,27 @@ public class Game : MonoBehaviour
 
             foreach (var row in csvReader.EnumDataRows())
             {
-                l.Add(new Data.ShopItem()
+                var shopItem = new Data.ShopItem()
                 {
                     Asset = row.GetString("Asset"),
                     ActiveItemLifetime = row.GetFloat("ActiveItemLifetime"),
                     CostLikes = row.GetFloat("CostLikes"),
-                    IsTemporary= row.GetBool("IsTemporary"),
+                    IsTemporary = row.GetBool("IsTemporary"),
                     LikeMultiplierAddition = row.GetFloat("LikeMultiplierAddition"),
                     LikesAdd = row.GetFloat("LikesAdd"),
                     LikesPerSecond = row.GetFloat("LikesPerSecond"),
                     MadnessAdd = row.GetFloat("MadnessAdd"),
                     MadnessPerSecond = row.GetFloat("MadnessPerSecond"),
                     Name = row.GetString("Name"),
-                    Tags = row.GetString("Tags").Split(new char[] { ',', ' '}).Select(it => it.Trim()).ToList(),
+                    Tags = row.GetString("Tags").Split(new char[] { ',', ' ' }).Select(it => it.Trim()).ToList(),
                     Text = row.GetString("Text"),
                     Type = row.GetString("Type"),
-                });
+                    IsUnlimited = row.GetBool("IsUnlimited"),
+                    RemainingBuys = new ValueObserving<int>(),
+                };
+                shopItem.RemainingBuys.set = row.GetInt("RemainingBuys");
+
+                l.Add(shopItem);
             }
 
             Player.ShopItems.set = l;
@@ -116,15 +122,27 @@ public class Game : MonoBehaviour
         }
     }
 
+    public bool CanBuy(Data.ShopItem shopItem)
+    {
+        return shopItem != null && 
+            Player.Likes.get >= shopItem.CostLikes;
+    }
+
     public void Buy(Data.ShopItem shopItem)
     {
-        if (Player.Likes.get >= shopItem.CostLikes)
+        if (CanBuy(shopItem))
         {
             // remove from shop
+            if (!shopItem.IsUnlimited)
             {
-                var l = Player.ShopItems.get;
-                l.Remove(shopItem);
-                Player.ShopItems.set = l;
+                // consume
+                shopItem.RemainingBuys.set = shopItem.RemainingBuys.get - 1;
+                if (shopItem.RemainingBuys.get <= 0)
+                {
+                    var l = Player.ShopItems.get;
+                    l.Remove(shopItem);
+                    Player.ShopItems.set = l;
+                }
             }
 
             // pay

@@ -6,14 +6,17 @@ using UnityEngine.UI;
 public class UIShopItem : MonoBehaviour {
     public Data.ShopItem ShopItem;
 
-    public Text Text;
+    public Text TextCost;
+    public Text TextBuys;
     public Button ButtonBuy;
     public Image Image;
 
     void Refresh()
     {
         if (ShopItem == null) return;
-        Text.text = string.Format("{0}", ShopItem.CostLikes);
+        TextCost.text = string.Format("{0}", ShopItem.CostLikes);
+        TextBuys.text = string.Format("{0}", ShopItem.RemainingBuys.get);
+        TextBuys.gameObject.SetActive(!ShopItem.IsUnlimited);
         Image.sprite = SpriteFactory.Instance.Get(ShopItem.Asset);
     }
 
