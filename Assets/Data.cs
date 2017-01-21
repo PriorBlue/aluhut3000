@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Data
 {
-    // [System.Serializable]
+    [System.Serializable]
     public class Player
     {
         /// <summary>
@@ -34,8 +34,14 @@ public class Data
             ActiveItems.get.ForEach(it => likeMultiplier += it.LikeMultiplierAddition);
             LikeMultiplier.set = likeMultiplier;
 
-            Madness.set = Madness.get + MadnessPerSecond.get * Time.deltaTime;
-            Likes.set = Likes.get + LikesPerSecond.get * Time.deltaTime;
+            var lps = LikesPerSecond.get;
+            var mps = MadnessPerSecond.get;
+
+            ActiveItems.get.ForEach(it => lps += it.LikesPerSecond);
+            ActiveItems.get.ForEach(it => mps += it.MadnessPerSecond);
+
+            Madness.set = Madness.get + mps * Time.deltaTime;
+            Likes.set = Likes.get + lps * Time.deltaTime;
 
             ActiveItems.get.ForEach(it => it.LifetimeLeft.set = Mathf.Max(0f, it.LifetimeLeft.get - Time.deltaTime));
 
@@ -51,7 +57,7 @@ public class Data
         }
     }
 
-    // [System.Serializable]
+    [System.Serializable]
     public class ShopItem
     {
         public string Name;
@@ -77,7 +83,7 @@ public class Data
         public bool IsTemporary;
     }
     
-    // [System.Serializable]
+    [System.Serializable]
     public class ActiveItem
     {
         public string Name;
@@ -98,7 +104,7 @@ public class Data
         public bool IsTemporary;
     }
 
-    // [System.Serializable]
+    [System.Serializable]
     public class HashtahInfo
     {
         public string Text;
@@ -106,7 +112,7 @@ public class Data
         public float UsagesPerSeconds;
     }
 
-    // [System.Serializable]
+    [System.Serializable]
     public class Posting
     {
         public List<string> Hashtags = new List<string>();

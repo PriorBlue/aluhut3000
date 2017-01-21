@@ -56,7 +56,23 @@ public class Game : MonoBehaviour
                 MadnessAdd = 10f,
                 Tags = new List<string>() {"maddddness" },
                 Text = "lorem tet lala",
-            }
+            },
+            new Data.ShopItem()
+            {
+                Asset = "element_reach_001",
+                CostLikes = 50,
+                LikesAdd = 0,
+                LikesPerSecond = 10f,
+                MadnessPerSecond = 1f,
+                IsTemporary = false,
+                ActiveItemLifetime = 0f,
+                Name = "flat earth",
+                Type = "blub",
+                LikeMultiplierAddition = 0.1f,
+                MadnessAdd = 10f,
+                Tags = new List<string>() {"maddddness" },
+                Text = "lorem tet lala",
+            },
         };
     }
 

@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Likes: {fileID: 1311502219}
-  Madness: {fileID: 1046226732}
+  Info: {fileID: 1046226732}
   Unread: {fileID: 896718831}
   LikeMultiplier: {fileID: 400703553}
 --- !u!4 &232181544
@@ -1735,7 +1735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &615274890
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2038,7 +2038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &927544224
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2109,7 +2109,7 @@ GameObject:
   - component: {fileID: 1046226732}
   - component: {fileID: 1046226731}
   m_Layer: 5
-  m_Name: TextMadness
+  m_Name: TextInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2130,8 +2130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 82, y: -25}
-  m_SizeDelta: {x: 154, y: 30}
+  m_AnchoredPosition: {x: 262, y: -45}
+  m_SizeDelta: {x: 514, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046226731
 MonoBehaviour:
@@ -2181,9 +2181,9 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Madness: 0'
+  m_Text: Info info
 --- !u!222 &1046226733
 CanvasRenderer:
   m_ObjectHideFlags: 0
