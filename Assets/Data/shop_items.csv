@@ -16,14 +16,14 @@ Alufolie, Wabenstruktur;Besser als ihre glatte Schwester, hält deutlich länger
 Dodekaeder;Schützt vor flimmern der fünften Herzkammer;counter005;;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;kammerflimmern;;0;0;0
 Dodekaeder, REINES GOLD;Schützt dich permanent von der fiesen Tachyonenkanone der Bundeswehr.;counter008;;Counter;1200;0;0;0;0;;0;0;0;FALSE;FALSE;0;kammerflimmern;;0;0;0
 Augentropfen;Schützen vor der Lügenpresse und den anderen öffentlich rechtlichen Rundfunkanstalten.;counter006;;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;presse;;0;0;0
-Aluhut;Sieht gut aus, schützt vor Gehirnwellen Download und Upload ;madness001;;madness;23;0;0;0;0;;5;0;0;FALSE;FALSE;0;;;0;0;0
-Wünschelroute;Standard in jedem Zweiflerhaushalt. Wasseradern und Energiefelder lassen sich easy lokalisieren.;madness002;;madness;2500;0;0;0;0;;10;0;0;FALSE;FALSE;0;;;0;0;0
-Pendel;Wenn es um nicht messbare Strahlung geht, kann nur ein pendel helfen.;madness003;;madness;8000;0;0;0;0;;30;0;0;FALSE;FALSE;0;;;0;0;0
-Reichsbürgerurkunde;Nur damit seid ihr wirklich unabhängig und könnt frei denken, Tschüss BRD GmbH!;madness004;;madness;75000;0;0;0;0;;90;0;0;FALSE;FALSE;0;;;0;0;0
-doppelt-gewickelter Aluhut;Stabiler als der Vorgänger, macht euch immunerer von Gehirnwellenmanipulation.;madness005;;madness;250000;0;0;0;0;;180;0;0;FALSE;FALSE;0;;;0;0;0
-Orgonit, Pyramide;Eine Raumpyramide für die knapp 30 Quadrameter, die dein Reich sind. Keine ungewollte Ionisierung mehr.;madness006;;madness;900000;0;0;0;0;;320;0;0;FALSE;FALSE;0;;;0;0;0
-Energiesteine im Glas;Die Energiesteine hydratisieren das Wasser und befreien sie von toxiziionistischen Gefahrstoffen. Sturm im Glas!;madness007;;madness;1300000;0;0;0;0;;900;0;0;FALSE;FALSE;0;;;0;0;0
-Orgon Akkumulator;Der Bentley unter den Orgoniten. Du kannst dich und mit etwas Geschick eine zweite Person vor den Strahlungen schützen und dich ausgiebig aufladen.;madness008;;madness;1900000;0;0;0;0;;1500;0;0;FALSE;FALSE;0;;;0;0;0
+Aluhut;Sieht gut aus, schützt vor Gehirnwellen Download und Upload ;madness001;layer_madness001;madness;23;0;0;0;0;;5;0;0;FALSE;FALSE;0;;;0;0;0
+Wünschelroute;Standard in jedem Zweiflerhaushalt. Wasseradern und Energiefelder lassen sich easy lokalisieren.;madness002;layer_madness002;madness;2500;0;0;0;0;;10;0;0;FALSE;FALSE;0;;;0;0;0
+Pendel;Wenn es um nicht messbare Strahlung geht, kann nur ein pendel helfen.;madness003;layer_madness003;madness;8000;0;0;0;0;;30;0;0;FALSE;FALSE;0;;;0;0;0
+Reichsbürgerurkunde;Nur damit seid ihr wirklich unabhängig und könnt frei denken, Tschüss BRD GmbH!;madness004;layer_madness004;madness;75000;0;0;0;0;;90;0;0;FALSE;FALSE;0;;;0;0;0
+doppelt-gewickelter Aluhut;Stabiler als der Vorgänger, macht euch immunerer von Gehirnwellenmanipulation.;madness005;layer_madness005;madness;250000;0;0;0;0;;180;0;0;FALSE;FALSE;0;;;0;0;0
+Orgonit, Pyramide;Eine Raumpyramide für die knapp 30 Quadrameter, die dein Reich sind. Keine ungewollte Ionisierung mehr.;madness006;layer_madness006;madness;900000;0;0;0;0;;320;0;0;FALSE;FALSE;0;;;0;0;0
+Energiesteine im Glas;Die Energiesteine hydratisieren das Wasser und befreien sie von toxiziionistischen Gefahrstoffen. Sturm im Glas!;madness007;layer_madness007;madness;1300000;0;0;0;0;;900;0;0;FALSE;FALSE;0;;;0;0;0
+Orgon Akkumulator;Der Bentley unter den Orgoniten. Du kannst dich und mit etwas Geschick eine zweite Person vor den Strahlungen schützen und dich ausgiebig aufladen.;madness008;layer_madness008;madness;1900000;0;0;0;0;;1500;0;0;FALSE;FALSE;0;;;0;0;0
 Blog;Dein erster Blog! Mit kostenlosem Webspace, animierten GIFs und auch einem Gästebuch. ;upgrade001;;upgrade;50;50;1;1;50;;5;5;0;FALSE;FALSE;0;0;;0;0;0
 Kurznachrichtendienst;Erst mal dieses Twatter gekauft. Wurde aber auch Zeit, diese hundertundvierzig Zeichen sind deine Welt.;upgrade002;;upgrade;500;900;5;0,555555556;100;;10;10;0;FALSE;FALSE;0;0;;0;0;0
 Gesichtsbuch;Der Datenkrake einen Strich durch die Rechnung gemacht: Mit diesem voll bestückten Fake Profil lässt sich so viel sharen und liken.;upgrade003;;upgrade;5000;1600;8;3,125;625;;20;20;0;FALSE;FALSE;0;0;;0;0;0

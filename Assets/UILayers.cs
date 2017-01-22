@@ -13,6 +13,7 @@ public class UILayers : MonoBehaviour
     {
         Game.Instance.Player.ActiveItems.RegisterObserverScoped(gameObject, (lOld, lNew) =>
         {
+            foreach (Transform it in transform) GameObject.Destroy(it.gameObject);
             foreach (var it in lNew)
             {
                 if (!string.IsNullOrEmpty(it.AssetLayer))
