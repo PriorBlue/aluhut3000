@@ -259,6 +259,7 @@ public class Game : MonoBehaviour
                     EventTags = shopItem.EventTags,
                 };
                 it.LifetimeLeft.set = shopItem.ActiveItemLifetime;
+				it.LifetimeMax = shopItem.ActiveItemLifetime;
                 l.Add(it);
 
                 Messenger.Broadcast<Data.ActiveItem>("new_item", it);

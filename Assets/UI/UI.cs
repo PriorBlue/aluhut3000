@@ -7,6 +7,7 @@ using System.Linq;
 public class UI : MonoBehaviour
 {
     public Text Likes;
+	public Text Follower;
     public Text Info;
     public Text Unread;
     public Text LikeMultiplier;
@@ -16,7 +17,7 @@ public class UI : MonoBehaviour
     {
         Game.Instance.Player.Follower.RegisterObserverScoped(gameObject, (v) =>
         {
-            Likes.text = string.Format("{0:0.0}", v);
+            Likes.text = string.Format("Likes: {0:0}", v);
         });
 
         Game.Instance.Player.UnreadPostings.RegisterObserverScoped(gameObject, (vOld, vNew) =>
@@ -26,8 +27,13 @@ public class UI : MonoBehaviour
 
         Game.Instance.Player.LikeMultiplier.RegisterObserverScoped(gameObject, (v) =>
         {
-            LikeMultiplier.text = string.Format("x {0:0.0}", v);
+            LikeMultiplier.text = string.Format("Madness: {0:0.0}", v);
         });
+
+		Game.Instance.Player.EffectiveFollowerPerSecond.RegisterObserverScoped(gameObject, (v) =>
+		{
+				Follower.text = string.Format("Follower:  {0:0}", v);
+		});
     }
 
     void Update()

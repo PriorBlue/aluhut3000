@@ -10,13 +10,15 @@ public class UIShopItem : MonoBehaviour {
     public Text TextBuys;
     public Button ButtonBuy;
     public Image Image;
+	public Text TextDescription;
 
     void Refresh()
     {
         if (ShopItem == null) return;
         TextCost.text = string.Format("{0}", ShopItem.CostLikes);
         TextBuys.text = string.Format("{0}", ShopItem.RemainingBuys.get);
-        TextBuys.gameObject.SetActive(!ShopItem.IsUnlimited);
+		TextDescription.text = ShopItem.Text;
+		TextBuys.gameObject.SetActive(!ShopItem.IsUnlimited & ShopItem.RemainingBuys.get >= 1);
         Image.sprite = SpriteFactory.Instance.Get(ShopItem.Asset);
         TextCost.color = Game.Instance.CanBuy(ShopItem) ? Color.green : Color.red;
     }
