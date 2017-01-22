@@ -46,17 +46,16 @@ public class Game : MonoBehaviour
         var l = Player.Hashtags.get;
         var hashtags = l.Where(it => it.IsGettingUsed.get).ToList();
 
-        if (hashtags.Count > 0)
+        hashtags.ForEach(it => it.UsagesLeft.set = it.UsagesLeft.get - 1f);
+
+        Player.Hashtags.set = l;
+
+        float follower = 0f;
+        hashtags.ForEach(it => follower += it.Follower);
+
+        if (follower > 0f)
         {
             Messenger.Broadcast<string>("play.sound.fx", "typing_loud");
-
-            hashtags.ForEach(it => it.UsagesLeft.set = it.UsagesLeft.get - 1f);
-
-            Player.Hashtags.set = l;
-
-            float follower = 0f;
-            hashtags.ForEach(it => follower += it.Follower);
-
             Player.Follower.set = Player.Follower.get + follower * Player.PostMultiplier.get;
         }
     }
@@ -73,6 +72,7 @@ public class Game : MonoBehaviour
             var shopItem = new Data.ShopItem()
             {
                 Asset = row.GetString("Asset"),
+                AssetLayer = row.GetString("AssetLayer"),
                 ActiveItemLifetime = row.GetFloat("ActiveItemLifetime"),
                 CostLikes = row.GetFloat("CostLikes"),
                 IsTemporary = row.GetBool("IsTemporary"),
@@ -251,6 +251,7 @@ public class Game : MonoBehaviour
                 var it = new Data.ActiveItem()
                 {
                     Asset = shopItem.Asset,
+                    AssetLayer = shopItem.AssetLayer,
                     Name = shopItem.Name,
                     Text = shopItem.Text,
                     Tags = shopItem.Tags,
