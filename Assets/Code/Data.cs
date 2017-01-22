@@ -24,8 +24,14 @@ public class Data
         public ListObserving<Event> PlannedEvents = new ListObserving<Event>();
         public ListObserving<HashtagInfo> Hashtags = new ListObserving<HashtagInfo>();
 
+        public ValueObserving<float> CreatePostLikeValueMultiplier = new ValueObserving<float>();
+        public ValueObserving<float> CreatePostLikeValueMultiplierIncPerSecond = new ValueObserving<float>();
+
         public void Update(float deltaT)
         {
+            // update global new post multiplier
+            CreatePostLikeValueMultiplier.set = CreatePostLikeValueMultiplier.get + CreatePostLikeValueMultiplierIncPerSecond.get * Time.deltaTime;
+
             // update multiplier
             float likeMultiplier = 1f;
             ActiveItems.get.ForEach(it => likeMultiplier += it.LikeMultiplierAddition);

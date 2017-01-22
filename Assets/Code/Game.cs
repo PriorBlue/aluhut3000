@@ -33,6 +33,8 @@ public class Game : MonoBehaviour
         Player.BaseFollowerPerSecond.set = 0f;
         Player.LikeMultiplier.set = 1f;
         Player.PostMultiplier.set = 1f;
+        Player.CreatePostLikeValueMultiplier.set = 1f;
+        Player.CreatePostLikeValueMultiplierIncPerSecond.set = 0f;
 
         LoadShopItems();
         LoadPostingsOrEvents();
@@ -103,6 +105,8 @@ public class Game : MonoBehaviour
         timeoutPostingMin = row.GetFloat("timeoutPostingMin");
         timeoutPostingMax = row.GetFloat("timeoutPostingMax");
         maxUnreadPostings = row.GetInt("maxUnreadPostings");
+
+        Player.CreatePostLikeValueMultiplierIncPerSecond.set = row.GetFloat("CreatePostLikeValueMultiplierIncPerSecond");
 }
 
     private void LoadPostingsOrEvents()
@@ -275,7 +279,9 @@ public class Game : MonoBehaviour
             Player.PossiblePostingsOrEvents.get.Where(it => filter == null || filter(it)), 
             (it => it.RandomWeight));
 
-        l.Add(possible.CreatePosting());
+        var post = possible.CreatePosting();
+        post.LikeValue *= Player.CreatePostLikeValueMultiplier.get;
+        l.Add(post);
 
         if (possible.IsEvent)
         {

@@ -41,13 +41,17 @@ LikeMultiplier: x {2:0.0}
 PostMultiplier: x {3:0.0} 
 Blocks: {4} 
 Events: {5}
-Hashtags: {6}", 
+Hashtags: {6}
+CreatePost: {7:0.0} / {8:0.0}", 
 player.Follower.get,
 player.EffectiveFollowerPerSecond.get,
 player.LikeMultiplier.get,
 player.PostMultiplier.get,
 player.MultiplierBlockRemaingTimes.get.Count,
 player.PlannedEvents.get.Count,
-string.Join(",", player.Hashtags.get.Select(it => it.Text).ToArray()));
+string.Join(",", player.Hashtags.get.Select(it => it.Text).ToArray()),
+player.CreatePostLikeValueMultiplier.get,
+player.CreatePostLikeValueMultiplierIncPerSecond.get
+);
     }
 }
