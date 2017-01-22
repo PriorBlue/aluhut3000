@@ -2942,7 +2942,7 @@ GameObject:
   - component: {fileID: 224913291839171522}
   - component: {fileID: 222502455562077538}
   - component: {fileID: 114568532105931976}
-  - component: {fileID: 114559030547036412}
+  - component: {fileID: 114601840272240884}
   m_Layer: 5
   m_Name: Items
   m_TagString: Untagged
@@ -6249,7 +6249,7 @@ GameObject:
   - component: {fileID: 222828315352174664}
   - component: {fileID: 114199586081291218}
   - component: {fileID: 114649648233148426}
-  - component: {fileID: 114752736990318316}
+  - component: {fileID: 114907726648053000}
   m_Layer: 5
   m_Name: PanelShop
   m_TagString: Untagged
@@ -8111,7 +8111,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7266d8d366800ed44ae892b69c06c65b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84781e6071c240b4fa6a33e08ad76625, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8749,7 +8749,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7266d8d366800ed44ae892b69c06c65b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84781e6071c240b4fa6a33e08ad76625, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11846,7 +11846,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 9999
+  m_PreferredWidth: 16
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -13110,7 +13110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 80
+  m_MinHeight: 48
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -20641,28 +20641,6 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Der Klingeldraht war ohnehin schon etwas warm geworden. Jetzt gibt es erst
     mal mit DSL 1600 auf die Fresse.
---- !u!114 &114559030547036412
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1347477247511372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
 --- !u!114 &114560038265405394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21729,6 +21707,24 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "WAS SIND DAS F\xDCR 1 WOLKEN, VONG WETTER HER?"
+--- !u!114 &114601840272240884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1347477247511372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 9999
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
 --- !u!114 &114602137098419524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -23834,7 +23830,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224856367356812022}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.07338235
+  m_Size: 0.08137255
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -25368,28 +25364,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114752736990318316
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1820483419877890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
 --- !u!114 &114754572102142726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -29082,7 +29056,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7266d8d366800ed44ae892b69c06c65b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84781e6071c240b4fa6a33e08ad76625, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29402,6 +29376,28 @@ MonoBehaviour:
   m_PreferredHeight: 999
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+--- !u!114 &114907726648053000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820483419877890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
 --- !u!114 &114908173349831578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37160,8 +37156,8 @@ RectTransform:
   m_Father: {fileID: 224913291839171522}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 192, y: 0}
   m_SizeDelta: {x: 384, y: 0}
   m_Pivot: {x: 0.5, y: 1}
@@ -39711,7 +39707,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224488922535070222}
-  m_Father: {fileID: 224913291839171522}
+  m_Father: {fileID: 224821205990534416}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -40072,13 +40068,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224913291839171522}
+  - {fileID: 224783377599446592}
   m_Father: {fileID: 224164652643045286}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -45.3}
-  m_SizeDelta: {x: 0, y: -90.6}
+  m_AnchoredPosition: {x: 0, y: -45}
+  m_SizeDelta: {x: 0, y: -90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224823447629802718
 RectTransform:
@@ -40735,7 +40732,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224454995357417010}
-  - {fileID: 224783377599446592}
   m_Father: {fileID: 224821205990534416}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
