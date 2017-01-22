@@ -130,6 +130,7 @@ public class Data
         public List<string> EventTags = new List<string>();
 
         public ValueObserving<float> LifetimeLeft;
+		public float LifetimeMax;
 
         public bool IsTemporary;
     }

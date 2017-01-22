@@ -9,6 +9,7 @@ public class UIActiveItem : MonoBehaviour {
 
     public Text Text;
     public Image Image;
+	public Image Fill;
 
     // Use this for initialization
     void Start () {
@@ -22,9 +23,11 @@ public class UIActiveItem : MonoBehaviour {
         if (ActiveItem.IsTemporary)
         {
             Text.text = string.Format("{0:0.0}", ActiveItem.LifetimeLeft.get);
+			Fill.fillAmount = ActiveItem.LifetimeLeft.get / ActiveItem.LifetimeMax;
         } else
         {
             Text.text = "";
+			Fill.fillAmount = 0f;
         }
 
         Image.sprite = SpriteFactory.Instance.Get(ActiveItem.Asset);
