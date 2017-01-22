@@ -24,6 +24,9 @@ public class UIPostings : MonoBehaviour
                     var go = GameObject.Instantiate(Prefab) as GameObject;
                     go.GetComponent<UIPosting>().Posting = it;
                     go.transform.SetParent(transform);
+					go.transform.localPosition = Vector3.zero;
+					go.transform.localScale = Vector3.one;
+					go.transform.localEulerAngles = Vector3.zero;
                 }
                 ++idx;
             }
