@@ -1891,7 +1891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1303769230072554
 GameObject:
   m_ObjectHideFlags: 1
@@ -10216,6 +10216,7 @@ MonoBehaviour:
   OnlyShowNth: 2
   OnlyShowNthSelector: 1
   Take: 50
+  Limit: 15
 --- !u!114 &114150927012653144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17229,6 +17230,7 @@ MonoBehaviour:
   OnlyShowNth: 2
   OnlyShowNthSelector: 0
   Take: 50
+  Limit: 15
 --- !u!114 &114500745107346842
 MonoBehaviour:
   m_ObjectHideFlags: 1
