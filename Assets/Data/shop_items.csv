@@ -1,16 +1,33 @@
-Name;Text;Asset;Type;CostLikes;FollowerAdd;FollowerPerSecond;OBSOLETE_MadnessAdd;OBSOLETE_MadnessPerSecond;Tags;PostMultiplierAddition;LikeMultiplierAddition;ActiveItemLifetime;IsTemporary;IsUnlimited;RemainingBuys;EventTags;Hashtag;HashtagUsages;HashtagUsagesPerSeconds;HashtagFollower
-Essigessenz;Hilft beim nat�rlich aufl�sen von Chemtrails, Standard in jedem Haushalt. Erm�glicht Thema #Chemtrails;element_reach_001;Hashtag;10;1000;3;1;0;la,lu;0;0;0;FALSE;TRUE;1;;;;;
-Alufolie;Kann zur direkten Abwehr von Gehirnwellenauslesen genutzt werden. Macht aber auch einen warmen Kopf. Du kannst endlich �ber #Echelon schreiben;hashtag_item00;Hashtag;20;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-Alufolie, mit Waben;Besserer Schutz Gegen Gedankenlesen, kann wiederverwendet werden. Endlich mehr �ber #Echelon schreiben!;hashtag_item01;Hashtag;1;0;10;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-Reptiloidenschuppe I;Beweis daf�r, dass Herbert Witzelsbul der CSU aus Memmimgen ein Reptiloid ist. Tapfer bei einer Wahlkampfveranstaltung errungen. Erlaubt Tweets zu #Reptiloiden;hashtag_item02;Hashtag;40;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-crap;even more crap;hashtag_item03;;50;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-crap;even more crap;hashtag_item04;;60;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-crap;even more crap;hashtag_item05;;70;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-crap;even more crap;hashtag_item06;;80;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-crap;even more crap;element_reach_001;;90;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-crap;even more crap;element_reach_001;;100;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-crap;even more crap;element_reach_001;;110;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-crap;even more crap;element_reach_001;;120;0;0;1;0;la,lu;0;0;0;FALSE;FALSE;1;;;;;
-alien;alien txt;;;1;0;0;1;0;la,lu;0;0;60;TRUE;TRUE;0;alien;;;;
-hashtag;alien brain found;;hashtag;2;0;0;1;0;alien;0;0;0;FALSE;TRUE;0;;alien;10;0;1
-hashtag;alien brownies;;hashtag;3;0;0;1;0;alien;0;0;0;FALSE;TRUE;0;;brownies;5;0;10
+﻿Name;Text;Asset;Type;CostLikes;FollowerAdd;FollowerPerSecond;OBSOLETE_MadnessAdd;OBSOLETE_MadnessPerSecond;Tags;PostMultiplierAddition;LikeMultiplierAddition;ActiveItemLifetime;IsTemporary;IsUnlimited;RemainingBuys;EventTags;Hashtag;HashtagUsages;HashtagUsagesPerSeconds;HashtagFollower
+Reptiloidenschuppe 1;Beweis, dass der Ortsvorstand Horst Bindemacher der CSU ein Reptiloid ist.;hashtag001;Hashtag;400;0;0;;;;10;0;0;FALSE;FALSE;0;;reptiloiden;5;0;
+Reptiloidenschuppe 2;Endlich kannst du beweisen, dass der Bürgermeister der Stadt Essen ein Reptiloid ist.;hashtag002;Hashtag;4000;0;0;;;;40;0;0;FALSE;FALSE;0;;reptiloiden;20;0;
+Reptiloidenschuppe 3;Es ist vollbracht! Im Schlaf konntet ihr der Präsidentenreptiloiden der BRD GmbH diese Schuppe entreissen. JETZT WERDEN DIR ALLE GLAUBEN.;hashtag003;Hashtag;40000;0;0;;;;100;0;0;FALSE;FALSE;0;;reptiloiden;80;0;
+Flat Earth Globus;Beim einer Versteigerung dem alten Erzfeind aus dem Schrebergarten abgerungen. Er zeigt eindeutig, dass die Erde eine Scheibe ist.;hashtag004;Hashtag;500;0;0;;;;15;0;0;FALSE;FALSE;0;;flatearth;5;0;
+GEZ Zwangsgebühren;Wer Gebühren bezahlt, darf sich beschweren. Und in diesem Falle über Merkel.;hashtag005;Hashtag;1600;0;0;;;;30;0;0;FALSE;FALSE;0;;dankemerkel;10;0;
+Ziegelstein;Der Stein weißt deutliche Wasseradern auf, es kann sich nur um die Freimaurer handeln;hashtag006;Hashtag;666;0;0;;;;13;0;0;FALSE;FALSE;0;;freimaurer;5;0;
+Pendel;Beweis für eigentlich alles, wenn man es richtig einsetzt.;hashtag007;Hashtag;2500;0;0;;;;13;0;0;FALSE;FALSE;0;;illuminaten;5;0;
+gefälschter Mondstein;Aus dem Raumfahrtzentrum Finkdenwerder gestohlen, es handelt eigentlich nur um Dreck in Staniolapier. Hast du zumindest so erpendelt.;hashtag008;Hashtag;45000;0;0;;;;90;0;0;FALSE;FALSE;0;;MoonHoax;5;0;5
+Geldschein (Dollar);Auf ebay gekauft, weil fliegen Chemtraisl unterstützt: Darauf kann man genau sehen, dass die Illuminaten alles im Griff haben.;hashtag009;Hashtag;70000;0;0;;;;130;0;0;FALSE;FALSE;0;;illuminaten;30;0;100
+Essigessenz;Kann kurzfristig die Wolkendecke öffnen, riecht leider etwas streng.;counter001;Counter;5000;0;0;0;0;;0;0;60;TRUE;FALSE;0;chemtrail;;0;0;0
+Essigverteiler;Schützt dich vor groß angelegten Chemtrail aktionen, permanent;counter002;Counter;5000;0;0;0;0;;0;0;60;TRUE;FALSE;0;chemtrail;;0;0;0
+Orgon-Cloudbuster;Kann zum Reverse-Geo-Engineering genutzt werden. Schützt permanent vor Chemtrails, künstlichem Wetter und sieht auch einfach verdammt gut aus.;counter003;Counter;5000;0;0;0;0;;0;0;60;TRUE;FALSE;0;wetter;;0;0;0
+Alufolie;Schützt vor akuten kosmischen Strahlungen, Gedankenwellen und Niederfrequenzrauschen. Wird dabei leider kontaminiert und strapaziert.;counter004;Counter;5000;0;0;0;0;;0;0;60;TRUE;FALSE;0;strahlung;;0;0;0
+Dodekaeder;Schützt vor flimmern der fünften Herzkammer;counter005;Counter;5000;0;0;0;0;;0;0;60;TRUE;FALSE;0;kammerflimmern;;0;0;0
+Augentropfen;Schützen vor der Lügenpresse und den anderen öffentlich rechtlichen Rundfunkanstalten.;counter006;Counter;5000;0;0;0;0;;0;0;60;TRUE;FALSE;0;presse;;0;0;0
+Aluhut;Sieht gut aus, schützt vor Gehirnwellen Download und Upload ;madness001;madness;23;0;0;0;0;;5;0;0;FALSE;FALSE;0;;;0;0;0
+Wünschelroute;Standard in jedem Zweiflerhaushalt. Wasseradern und Energiefelder lassen sich easy lokalisieren.;madness002;madness;2500;0;0;0;0;;10;0;0;FALSE;FALSE;0;;;0;0;0
+Pendel;Wenn es um nicht messbare Strahlung geht, kann nur ein pendel helfen.;madness003;madness;8000;0;0;0;0;;30;0;0;FALSE;FALSE;0;;;0;0;0
+Reichsbürgerurkunde;Nur damit seid ihr wirklich unabhängig und könnt frei denken, Tschüss BRD GmbH!;madness004;madness;75000;0;0;0;0;;90;0;0;FALSE;FALSE;0;;;0;0;0
+doppelt-gewickelter Aluhut;Stabiler als der Vorgänger, macht euch immunerer von Gehirnwellenmanipulation.;madness005;madness;250000;0;0;0;0;;180;0;0;FALSE;FALSE;0;;;0;0;0
+Orgonit, Pyramide;Eine Raumpyramide für die knapp 30 Quadrameter, die dein Reich sind. Keine ungewollte Ionisierung mehr.;madness006;madness;900000;0;0;0;0;;320;0;0;FALSE;FALSE;0;;;0;0;0
+Energiesteine im Glas;Die Energiesteine hydratisieren das Wasser und befreien sie von toxiziionistischen Gefahrstoffen. Sturm im Glas!;madness007;madness;1300000;0;0;0;0;;900;0;0;FALSE;FALSE;0;;;0;0;0
+Orgon Akkumulator;Der Bentley unter den Orgoniten. Du kannst dich und mit etwas Geschick eine zweite Person vor den Strahlungen schützen und dich ausgiebig aufladen.;madness008;madness;1900000;0;0;0;0;;1500;0;0;FALSE;FALSE;0;;;0;0;0
+Blog;Dein erster Blog! Mit kostenlosem Webspace, animierten GIFs und auch einem Gästebuch. ;upgrade001;upgrade;500;50;1;;;;5;5;0;FALSE;FALSE;0;0;;0;0;0
+Kurznachrichtendienst;Erst mal dieses Twatter gekauft. Wurde aber auch Zeit, diese hundertundvierzig Zeichen sind deine Welt.;upgrade002;upgrade;5000;900;2;;;;10;10;0;FALSE;FALSE;0;0;;0;0;0
+Gesichtsbuch;Der Datenkrake einen Strich durch die Rechnung gemacht: Mit diesem voll bestückten Fake Profil lässt sich so viel sharen und liken.;upgrade003;upgrade;50000;1600;3;;;;20;20;0;FALSE;FALSE;0;0;;0;0;0
+Profilbild (Ei);Dein Profil wird glaubhafter, wenn du ein Ei als Avatar nutzt. Zum Glück kennst du jemanden, der geschickt mit GIMP ist.;upgrade004;upgrade;500000;3200;4;;;;40;40;0;FALSE;FALSE;0;0;;0;0;0
+Highspeed Internet;Der Klingeldraht war ohnehin schon etwas warm geworden. Jetzt gibt es erst mal mit DSL 1600 auf die Fresse.;upgrade005;upgrade;900000;5000;5;;;;40;80;0;FALSE;FALSE;0;0;;0;0;0
+Kristall für deinen PC;Antivir und Kaspersky sind alle schon unterlaufen, aber der gute alte Quartz lässt dich nicht im Stich. Was Menschen heilt, hilft auch PCs.;upgrade006;upgrade;900001;900;6;;;;40;150;0;FALSE;FALSE;0;0;;0;0;0
+Banner Kampagne;Eine kurzfristige Kampagne, die deinen Beiträgen mehr Druck verleiht. Die Zielgruppe im Blick und App dafür.;upgrade007;upgrade;30000;250;8;;;;40;220;60;true;TRUE;0;0;;0;0;0
+Youtube Account;Ganz neues Publikum tummelt sich hier, niemand mag Texte und Bilder. Videos sind die Zukunft. Bald auch VR!;upgrade008;upgrade;1000000;0;5;;;;40;300;0;FALSE;FALSE;0;0;;0;0;0
+Darknet Router;Lächerlich, wie sich manche dem BND preisgeben. Der Darknet Router war ein Schnapper bei ebay, jetzt hört niemand mehr zu.;upgrade009;upgrade;2000000;0;5;;;;40;5;0;FALSE;FALSE;0;0;;0;0;0
