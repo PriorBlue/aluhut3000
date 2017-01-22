@@ -346,6 +346,12 @@ public class Game : MonoBehaviour
         player.MultiplierBlockRemaingTimes.set = l;
     }
 
+    public void LikeAnything()
+    {
+        var posting = Player.UnreadPostings.get.FirstOrDefault();
+        if (posting != null) Like(posting);
+    }
+
     public void Like(Data.Posting posting)
     {
         Player.Follower.set = Player.Follower.get + posting.LikeValue * Player.LikeMultiplier.get;

@@ -6,33 +6,38 @@ using System.Linq;
 
 public class UI : MonoBehaviour
 {
-    public Text Likes;
 	public Text Follower;
     public Text Info;
     public Text Unread;
     public Text LikeMultiplier;
+    public Text PostMultiplier;
 
     // Use this for initialization
     void Start()
     {
         Game.Instance.Player.Follower.RegisterObserverScoped(gameObject, (v) =>
         {
-            Likes.text = string.Format("Likes: {0:0}", v);
+            if (Follower != null) Follower.text = string.Format("Follower: {0:0}", v);
         });
 
         Game.Instance.Player.UnreadPostings.RegisterObserverScoped(gameObject, (vOld, vNew) =>
         {
-            Unread.text = string.Format("{0:0}", vNew.Count);
+            if (Unread != null) Unread.text = string.Format("{0:0}", vNew.Count);
         });
 
         Game.Instance.Player.LikeMultiplier.RegisterObserverScoped(gameObject, (v) =>
         {
-            LikeMultiplier.text = string.Format("Madness: {0:0.0}", v);
+            if (LikeMultiplier != null) LikeMultiplier.text = string.Format("Madness: {0:0.0}", v);
         });
 
-		Game.Instance.Player.EffectiveFollowerPerSecond.RegisterObserverScoped(gameObject, (v) =>
+        Game.Instance.Player.PostMultiplier.RegisterObserverScoped(gameObject, (v) =>
+        {
+            if (PostMultiplier != null) PostMultiplier.text = string.Format("Madness: {0:0.0}", v);
+        });
+
+        Game.Instance.Player.EffectiveFollowerPerSecond.RegisterObserverScoped(gameObject, (v) =>
 		{
-				Follower.text = string.Format("Follower:  {0:0}", v);
+		    Follower.text = string.Format("Follower:  {0:0}", v);
 		});
     }
 
