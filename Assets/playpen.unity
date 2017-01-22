@@ -4487,7 +4487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ffc293f59271c49a3c9f595b249cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PostingValue: 1
 --- !u!114 &211104924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26104,7 +26103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8683072823bb26744bb52faa740adcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FxName: typing_loud
+  FxName: click
 --- !u!1 &1429656804
 GameObject:
   m_ObjectHideFlags: 0
@@ -28716,7 +28715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8683072823bb26744bb52faa740adcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FxName: pop
+  FxName: click
 --- !u!114 &1529641177
 MonoBehaviour:
   m_ObjectHideFlags: 0

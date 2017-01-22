@@ -46,14 +46,19 @@ public class Game : MonoBehaviour
         var l = Player.Hashtags.get;
         var hashtags = l.Where(it => it.IsGettingUsed.get).ToList();
 
-        hashtags.ForEach(it => it.UsagesLeft.set = it.UsagesLeft.get - 1f);
-        
-        Player.Hashtags.set = l;
+        if (hashtags.Count > 0)
+        {
+            Messenger.Broadcast<string>("play.sound.fx", "typing_loud");
 
-        float follower = 0f;
-        hashtags.ForEach(it => follower += it.Follower);
+            hashtags.ForEach(it => it.UsagesLeft.set = it.UsagesLeft.get - 1f);
 
-        Player.Follower.set = Player.Follower.get + follower * Player.PostMultiplier.get;
+            Player.Hashtags.set = l;
+
+            float follower = 0f;
+            hashtags.ForEach(it => follower += it.Follower);
+
+            Player.Follower.set = Player.Follower.get + follower * Player.PostMultiplier.get;
+        }
     }
 
     private void LoadShopItems()
@@ -354,6 +359,8 @@ public class Game : MonoBehaviour
 
     public void Like(Data.Posting posting)
     {
+        Messenger.Broadcast<string>("play.sound.fx", "pop");
+
         Player.Follower.set = Player.Follower.get + posting.LikeValue * Player.LikeMultiplier.get;
         var l = Player.UnreadPostings.get;
         l.Remove(posting);
