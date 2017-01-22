@@ -1060,6 +1060,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1170759543456010
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224672619566799578}
+  - component: {fileID: 222847494718344978}
+  - component: {fileID: 114357861417844136}
+  m_Layer: 5
+  m_Name: Layers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1171119448022880
 GameObject:
   m_ObjectHideFlags: 1
@@ -7183,6 +7200,7 @@ MonoBehaviour:
     Text: Aus dem Raumfahrtzentrum Finkdenwerder gestohlen, es handelt eigentlich
       nur um Dreck in Staniolapier. Hast du zumindest so erpendelt.
     Asset: hashtag008
+    AssetLayer: 
     Type: Hashtag
     CostLikes: 45000
     FollowerAdd: 0
@@ -7220,6 +7238,7 @@ MonoBehaviour:
     Name: Dodekaeder
     Text: "Sch\xFCtzt vor flimmern der f\xFCnften Herzkammer"
     Asset: counter005
+    AssetLayer: 
     Type: Counter
     CostLikes: 5000
     FollowerAdd: 0
@@ -9210,6 +9229,7 @@ MonoBehaviour:
     Text: Ganz neues Publikum tummelt sich hier, niemand mag Texte und Bilder. Videos
       sind die Zukunft. Bald auch VR!
     Asset: upgrade008
+    AssetLayer: 
     Type: upgrade
     CostLikes: 1000000
     FollowerAdd: 0
@@ -10757,6 +10777,7 @@ MonoBehaviour:
     Name: Pendel
     Text: Wenn es um nicht messbare Strahlung geht, kann nur ein pendel helfen.
     Asset: madness003
+    AssetLayer: 
     Type: madness
     CostLikes: 8000
     FollowerAdd: 0
@@ -10845,6 +10866,7 @@ MonoBehaviour:
     Name: Reptiloidenschuppe 1
     Text: Beweis, dass der Ortsvorstand Horst Bindemacher der CSU ein Reptiloid ist.
     Asset: hashtag_item01
+    AssetLayer: 
     Type: Hashtag
     CostLikes: 400
     FollowerAdd: 0
@@ -11877,6 +11899,7 @@ MonoBehaviour:
     Text: "Nur damit seid ihr wirklich unabh\xE4ngig und k\xF6nnt frei denken, Tsch\xFCss
       BRD GmbH!"
     Asset: madness004
+    AssetLayer: 
     Type: madness
     CostLikes: 75000
     FollowerAdd: 0
@@ -12281,6 +12304,7 @@ MonoBehaviour:
     Text: "Der Bentley unter den Orgoniten. Du kannst dich und mit etwas Geschick
       eine zweite Person vor den Strahlungen sch\xFCtzen und dich ausgiebig aufladen."
     Asset: madness008
+    AssetLayer: 
     Type: madness
     CostLikes: 1900000
     FollowerAdd: 0
@@ -13586,6 +13610,7 @@ MonoBehaviour:
     Text: Erst mal dieses Twatter gekauft. Wurde aber auch Zeit, diese hundertundvierzig
       Zeichen sind deine Welt.
     Asset: upgrade002
+    AssetLayer: 
     Type: upgrade
     CostLikes: 5000
     FollowerAdd: 900
@@ -14508,6 +14533,18 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+--- !u!114 &114357861417844136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170759543456010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220408598ec47a74b87c2e55c2e315a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1563793324037172, guid: 82a607d86dc4621468c7b5f50d3f19e4, type: 2}
 --- !u!114 &114358665226064164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14660,6 +14697,7 @@ MonoBehaviour:
     Text: Der Klingeldraht war ohnehin schon etwas warm geworden. Jetzt gibt es erst
       mal mit DSL 1600 auf die Fresse.
     Asset: upgrade005
+    AssetLayer: 
     Type: upgrade
     CostLikes: 900000
     FollowerAdd: 5000
@@ -15648,6 +15686,7 @@ MonoBehaviour:
     Text: "Dein Profil wird glaubhafter, wenn du ein Ei als Avatar nutzt. Zum Gl\xFCck
       kennst du jemanden, der geschickt mit GIMP ist."
     Asset: upgrade004
+    AssetLayer: 
     Type: upgrade
     CostLikes: 500000
     FollowerAdd: 3200
@@ -16130,6 +16169,7 @@ MonoBehaviour:
     Text: Die Energiesteine hydratisieren das Wasser und befreien sie von toxiziionistischen
       Gefahrstoffen. Sturm im Glas!
     Asset: madness007
+    AssetLayer: 
     Type: madness
     CostLikes: 1300000
     FollowerAdd: 0
@@ -16668,6 +16708,7 @@ MonoBehaviour:
     Text: "Der Stein wei\xDFt deutliche Wasseradern auf, es kann sich nur um die Freimaurer
       handeln"
     Asset: hashtag006
+    AssetLayer: 
     Type: Hashtag
     CostLikes: 666
     FollowerAdd: 0
@@ -16753,6 +16794,7 @@ MonoBehaviour:
     Text: "Sch\xFCtzen vor der L\xFCgenpresse und den anderen \xF6ffentlich rechtlichen
       Rundfunkanstalten."
     Asset: counter006
+    AssetLayer: 
     Type: Counter
     CostLikes: 5000
     FollowerAdd: 0
@@ -18829,6 +18871,7 @@ MonoBehaviour:
     Name: doppelt-gewickelter Aluhut
     Text: "Stabiler als der Vorg\xE4nger, macht euch immunerer von Gehirnwellenmanipulation."
     Asset: madness005
+    AssetLayer: 
     Type: madness
     CostLikes: 250000
     FollowerAdd: 0
@@ -19098,6 +19141,7 @@ MonoBehaviour:
     Text: Standard in jedem Zweiflerhaushalt. Wasseradern und Energiefelder lassen
       sich easy lokalisieren.
     Asset: madness002
+    AssetLayer: 
     Type: madness
     CostLikes: 2500
     FollowerAdd: 0
@@ -19207,6 +19251,7 @@ MonoBehaviour:
     Text: "Dein erster Blog! Mit kostenlosem Webspace, animierten GIFs und auch einem
       G\xE4stebuch."
     Asset: upgrade001
+    AssetLayer: 
     Type: upgrade
     CostLikes: 500
     FollowerAdd: 50
@@ -19864,6 +19909,7 @@ MonoBehaviour:
     Text: "Eine Raumpyramide f\xFCr die knapp 30 Quadrameter, die dein Reich sind.
       Keine ungewollte Ionisierung mehr."
     Asset: madness006
+    AssetLayer: 
     Type: madness
     CostLikes: 900000
     FollowerAdd: 0
@@ -20843,6 +20889,7 @@ MonoBehaviour:
     Text: "Eine kurzfristige Kampagne, die deinen Beitr\xE4gen mehr Druck verleiht.
       Die Zielgruppe im Blick und App daf\xFCr."
     Asset: upgrade007
+    AssetLayer: 
     Type: upgrade
     CostLikes: 30000
     FollowerAdd: 250
@@ -21229,7 +21276,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224856367356812022}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.10755208
+  m_Size: 0.18333334
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -21730,6 +21777,7 @@ MonoBehaviour:
     Text: "Es ist vollbracht! Im Schlaf konntet ihr der Pr\xE4sidentenreptiloiden
       der BRD GmbH diese Schuppe entreissen. JETZT WERDEN DIR ALLE GLAUBEN."
     Asset: hashtag_item03
+    AssetLayer: 
     Type: Hashtag
     CostLikes: 40000
     FollowerAdd: 0
@@ -21949,6 +21997,7 @@ MonoBehaviour:
     Name: Aluhut
     Text: "Sieht gut aus, sch\xFCtzt vor Gehirnwellen Download und Upload"
     Asset: madness001
+    AssetLayer: 
     Type: madness
     CostLikes: 23
     FollowerAdd: 0
@@ -22323,6 +22372,7 @@ MonoBehaviour:
     Name: Essigessenz
     Text: "Kann kurzfristig die Wolkendecke \xF6ffnen, riecht leider etwas streng."
     Asset: counter001
+    AssetLayer: 
     Type: Counter
     CostLikes: 5000
     FollowerAdd: 0
@@ -22982,6 +23032,7 @@ MonoBehaviour:
     Text: "Sch\xFCtzt vor akuten kosmischen Strahlungen, Gedankenwellen und Niederfrequenzrauschen.
       Wird dabei leider kontaminiert und strapaziert."
     Asset: counter004
+    AssetLayer: 
     Type: Counter
     CostLikes: 5000
     FollowerAdd: 0
@@ -23269,6 +23320,7 @@ MonoBehaviour:
     Text: "Der Datenkrake einen Strich durch die Rechnung gemacht: Mit diesem voll
       best\xFCckten Fake Profil l\xE4sst sich so viel sharen und liken."
     Asset: upgrade003
+    AssetLayer: 
     Type: upgrade
     CostLikes: 50000
     FollowerAdd: 1600
@@ -24057,6 +24109,7 @@ MonoBehaviour:
     Text: "Endlich kannst du beweisen, dass der B\xFCrgermeister der Stadt Essen ein
       Reptiloid ist."
     Asset: hashtag_item02
+    AssetLayer: 
     Type: Hashtag
     CostLikes: 4000
     FollowerAdd: 0
@@ -24642,6 +24695,7 @@ MonoBehaviour:
     Text: "Kann zum Reverse-Geo-Engineering genutzt werden. Sch\xFCtzt permanent vor
       Chemtrails, k\xFCnstlichem Wetter und sieht auch einfach verdammt gut aus."
     Asset: counter003
+    AssetLayer: 
     Type: Counter
     CostLikes: 5000
     FollowerAdd: 0
@@ -24743,6 +24797,7 @@ MonoBehaviour:
     Text: "Auf ebay gekauft, weil fliegen Chemtraisl unterst\xFCtzt: Darauf kann man
       genau sehen, dass die Illuminaten alles im Griff haben."
     Asset: hashtag009
+    AssetLayer: 
     Type: Hashtag
     CostLikes: 70000
     FollowerAdd: 0
@@ -25556,6 +25611,7 @@ MonoBehaviour:
     Name: Essigverteiler
     Text: "Sch\xFCtzt dich vor gro\xDF angelegten Chemtrail aktionen, permanent"
     Asset: counter002
+    AssetLayer: 
     Type: Counter
     CostLikes: 5000
     FollowerAdd: 0
@@ -26183,6 +26239,7 @@ MonoBehaviour:
     Text: Beim einer Versteigerung dem alten Erzfeind aus dem Schrebergarten abgerungen.
       Er zeigt eindeutig, dass die Erde eine Scheibe ist.
     Asset: hashtag004
+    AssetLayer: 
     Type: Hashtag
     CostLikes: 500
     FollowerAdd: 0
@@ -26767,6 +26824,7 @@ MonoBehaviour:
     Name: Pendel
     Text: "Beweis f\xFCr eigentlich alles, wenn man es richtig einsetzt."
     Asset: hashtag007
+    AssetLayer: 
     Type: Hashtag
     CostLikes: 2500
     FollowerAdd: 0
@@ -26838,6 +26896,7 @@ MonoBehaviour:
     Text: "Antivir und Kaspersky sind alle schon unterlaufen, aber der gute alte Quartz
       l\xE4sst dich nicht im Stich. Was Menschen heilt, hilft auch PCs."
     Asset: upgrade006
+    AssetLayer: 
     Type: upgrade
     CostLikes: 900001
     FollowerAdd: 900
@@ -26942,6 +27001,7 @@ MonoBehaviour:
     Text: "L\xE4cherlich, wie sich manche dem BND preisgeben. Der Darknet Router war
       ein Schnapper bei ebay, jetzt h\xF6rt niemand mehr zu."
     Asset: upgrade009
+    AssetLayer: 
     Type: upgrade
     CostLikes: 2000000
     FollowerAdd: 0
@@ -27297,6 +27357,7 @@ MonoBehaviour:
     Text: "Wer Geb\xFChren bezahlt, darf sich beschweren. Und in diesem Falle \xFCber
       Merkel."
     Asset: hashtag005
+    AssetLayer: 
     Type: Hashtag
     CostLikes: 1600
     FollowerAdd: 0
@@ -29873,6 +29934,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1421663989671010}
+--- !u!222 &222847494718344978
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170759543456010}
 --- !u!222 &222849046253028260
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -31941,7 +32008,7 @@ RectTransform:
   - {fileID: 224597473446977898}
   - {fileID: 224051484114471650}
   m_Father: {fileID: 224843757064636254}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -32047,8 +32114,8 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1704427485326772}
-  m_LocalRotation: {x: -0.11384691, y: 0.38077074, z: -0.04599715, w: 0.91648066}
-  m_LocalPosition: {x: 0, y: 0, z: 179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224681318104625112}
@@ -32069,11 +32136,11 @@ RectTransform:
   - {fileID: 224042178284571144}
   - {fileID: 224145506900826118}
   m_Father: {fileID: 224843757064636254}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -10, y: 46, z: -10}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 520, y: -819}
+  m_AnchoredPosition: {x: 624, y: -822}
   m_SizeDelta: {x: 240, y: 1555}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!224 &224233817303709134
@@ -32483,7 +32550,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224843757064636254}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
@@ -33436,7 +33503,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224843757064636254}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -33621,8 +33688,8 @@ RectTransform:
   m_Father: {fileID: 224821205990534416}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 192, y: 0}
   m_SizeDelta: {x: 384, y: 0}
   m_Pivot: {x: 0.5, y: 1}
@@ -35204,6 +35271,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!224 &224672619566799578
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170759543456010}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 0.2120756}
+  m_Children: []
+  m_Father: {fileID: 224843757064636254}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 9999, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224675128280940572
 RectTransform:
   m_ObjectHideFlags: 1
@@ -36485,6 +36570,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224626566985414164}
+  - {fileID: 224672619566799578}
   - {fileID: 224299847641454906}
   - {fileID: 224916634285865946}
   - {fileID: 224231975055837926}
@@ -37121,8 +37207,8 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1038922739245054}
-  m_LocalRotation: {x: 0.11384691, y: 0.38077074, z: 0.04599715, w: 0.91648066}
-  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224860537661537244}
@@ -37143,11 +37229,11 @@ RectTransform:
   - {fileID: 224987217329148058}
   - {fileID: 224112613507088416}
   m_Father: {fileID: 224843757064636254}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 10, y: 46, z: 10}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -2, y: -819}
+  m_AnchoredPosition: {x: 0, y: -822}
   m_SizeDelta: {x: 240, y: 1555}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224920538184431940

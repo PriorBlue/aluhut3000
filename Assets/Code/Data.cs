@@ -90,6 +90,7 @@ public class Data
         public string Name;
         public string Text;
         public string Asset;
+        public string AssetLayer;
 
         public string Type;
 
@@ -124,6 +125,7 @@ public class Data
         public string Name;
         public string Text;
         public string Asset;
+        public string AssetLayer;
 
         public string Type;
 
