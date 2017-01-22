@@ -21,7 +21,7 @@ public class UIPosting : MonoBehaviour {
         Refresh();
 	}
 
-    private void Like()
+    public void Like()
     {
         Game.Instance.Like(Posting);
     }

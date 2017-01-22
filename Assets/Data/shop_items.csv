@@ -1,35 +1,35 @@
-﻿Name;Text;Asset;Type;CostLikes;FollowerAdd;FollowerPerSecond;cost per follower;cost per FPM;Tags;PostMultiplierAddition;LikeMultiplierAddition;ActiveItemLifetime;IsTemporary;IsUnlimited;RemainingBuys;EventTags;Hashtag;HashtagUsages;HashtagUsagesPerSeconds;HashtagFollower
-Reptiloidenschuppe 1;Beweis, dass der Ortsvorstand Horst Bindemacher der CSU ein Reptiloid ist.;hashtag001;Hashtag;400;5;1;16;400;;10;0;0;FALSE;TRUE;0;;#Reptiloiden sind unter uns!;5;0;
-Reptiloidenschuppe 2;Endlich kannst du beweisen, dass der Bürgermeister der Stadt Essen ein Reptiloid ist.;hashtag002;Hashtag;4000;60;12;3,333333333;333,3333333;;40;0;0;FALSE;TRUE;0;;Die Augen des Bürgermeisters #Reptiloid;20;0;
-Reptiloidenschuppe 3;Es ist vollbracht! Im Schlaf konntet ihr der Präsidentenreptiloiden der BRD GmbH diese Schuppe entreissen. JETZT WERDEN DIR ALLE GLAUBEN.;hashtag003;Hashtag;40000;700;150;0,714285714;266,6666667;;100;0;0;FALSE;TRUE;0;;Merkel ist ein #Reptiloid!;80;0;
-Flat Earth Globus;Beim einer Versteigerung dem alten Erzfeind aus dem Schrebergarten abgerungen. Er zeigt eindeutig, dass die Erde eine Scheibe ist.;hashtag004;Hashtag;300;5;1;12;300;;15;0;0;FALSE;TRUE;0;;#Flatearth ist real, ihr Hater;5;0;
-GEZ Zwangsgebühren;Wer Gebühren bezahlt, darf sich beschweren. Und in diesem Falle über Merkel.;hashtag005;Hashtag;400;12;1;3,333333333;400;;30;0;0;FALSE;TRUE;0;;#DankeMerkel;10;0;
-Ziegelstein;Der Stein weißt deutliche Wasseradern auf, es kann sich nur um die Freimaurer handeln;hashtag006;Hashtag;666;24;2;5,55;333;;13;0;0;FALSE;TRUE;0;;Wasseradern! Der Beweis! #Freimaurer;5;0;
-Pendel;Beweis für eigentlich alles, wenn man es richtig einsetzt.;hashtag007;Hashtag;1000;50;5;4;200;;13;0;0;FALSE;TRUE;0;;Ausgependelt! #Lügenpresse!;5;0;
-gefälschter Mondstein;Aus dem Raumfahrtzentrum Finkdenwerder gestohlen, es handelt eigentlich nur um Dreck in Staniolapier. Hast du zumindest so erpendelt.;hashtag008;Hashtag;500;30;2;3,333333333;250;;90;0;0;FALSE;TRUE;0;;Da war niemand. #Moonlanding;5;0;5
-Geldschein (Dollar);Auf ebay gekauft, weil selbst fliegen Chemtrails unterstützt: Darauf kann man genau sehen, dass die Illuminaten alles im Griff haben.;hashtag009;Hashtag;50;9;1;0,185185185;50;;130;0;0;FALSE;TRUE;0;;Danke Dan Brown! #Illuminati;30;0;100
-Essigessenz;Kann kurzfristig die Wolkendecke öffnen, riecht leider etwas streng.;counter001;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;chemtrail;;0;0;0
-Essigverteiler;Schützt dich vor groß angelegten Chemtrail aktionen, permanent;counter002;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;chemtrail;;0;0;0
-Orgon-Cloudbuster;Kann zum Reverse-Geo-Engineering genutzt werden. Schützt permanent vor Chemtrails, künstlichem Wetter und sieht auch einfach verdammt gut aus.;counter003;Counter;200;0;0;0;0;;0;0;0;FALSE;FALSE;0;wetter;;0;0;0
-Alufolie;Schützt vor akuten kosmischen Strahlungen, Gedankenwellen und Niederfrequenzrauschen. Wird dabei leider kontaminiert und strapaziert.;counter004;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;strahlung;;0;0;0
-Alufolie, Wabenstruktur;Besser als ihre glatte Schwester, hält deutlich länger.;counter007;Counter;900;0;0;0;0;;0;0;240;TRUE;FALSE;0;strahlung;;0;0;0
-Dodekaeder;Schützt vor flimmern der fünften Herzkammer;counter005;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;kammerflimmern;;0;0;0
-Dodekaeder, REINES GOLD;Schützt dich permanent von der fiesen Tachyonenkanone der Bundeswehr.;counter008;Counter;1200;0;0;0;0;;0;0;0;FALSE;FALSE;0;kammerflimmern;;0;0;0
-Augentropfen;Schützen vor der Lügenpresse und den anderen öffentlich rechtlichen Rundfunkanstalten.;counter006;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;presse;;0;0;0
-Aluhut;Sieht gut aus, schützt vor Gehirnwellen Download und Upload ;madness001;madness;23;0;0;0;0;;5;0;0;FALSE;FALSE;0;;;0;0;0
-Wünschelroute;Standard in jedem Zweiflerhaushalt. Wasseradern und Energiefelder lassen sich easy lokalisieren.;madness002;madness;2500;0;0;0;0;;10;0;0;FALSE;FALSE;0;;;0;0;0
-Pendel;Wenn es um nicht messbare Strahlung geht, kann nur ein pendel helfen.;madness003;madness;8000;0;0;0;0;;30;0;0;FALSE;FALSE;0;;;0;0;0
-Reichsbürgerurkunde;Nur damit seid ihr wirklich unabhängig und könnt frei denken, Tschüss BRD GmbH!;madness004;madness;75000;0;0;0;0;;90;0;0;FALSE;FALSE;0;;;0;0;0
-doppelt-gewickelter Aluhut;Stabiler als der Vorgänger, macht euch immunerer von Gehirnwellenmanipulation.;madness005;madness;250000;0;0;0;0;;180;0;0;FALSE;FALSE;0;;;0;0;0
-Orgonit, Pyramide;Eine Raumpyramide für die knapp 30 Quadrameter, die dein Reich sind. Keine ungewollte Ionisierung mehr.;madness006;madness;900000;0;0;0;0;;320;0;0;FALSE;FALSE;0;;;0;0;0
-Energiesteine im Glas;Die Energiesteine hydratisieren das Wasser und befreien sie von toxiziionistischen Gefahrstoffen. Sturm im Glas!;madness007;madness;1300000;0;0;0;0;;900;0;0;FALSE;FALSE;0;;;0;0;0
-Orgon Akkumulator;Der Bentley unter den Orgoniten. Du kannst dich und mit etwas Geschick eine zweite Person vor den Strahlungen schützen und dich ausgiebig aufladen.;madness008;madness;1900000;0;0;0;0;;1500;0;0;FALSE;FALSE;0;;;0;0;0
-Blog;Dein erster Blog! Mit kostenlosem Webspace, animierten GIFs und auch einem Gästebuch. ;upgrade001;upgrade;50;50;1;1;50;;5;5;0;FALSE;FALSE;0;0;;0;0;0
-Kurznachrichtendienst;Erst mal dieses Twatter gekauft. Wurde aber auch Zeit, diese hundertundvierzig Zeichen sind deine Welt.;upgrade002;upgrade;500;900;5;0,555555556;100;;10;10;0;FALSE;FALSE;0;0;;0;0;0
-Gesichtsbuch;Der Datenkrake einen Strich durch die Rechnung gemacht: Mit diesem voll bestückten Fake Profil lässt sich so viel sharen und liken.;upgrade003;upgrade;5000;1600;8;3,125;625;;20;20;0;FALSE;FALSE;0;0;;0;0;0
-Profilbild (Ei);Dein Profil wird glaubhafter, wenn du ein Ei als Avatar nutzt. Zum Glück kennst du jemanden, der geschickt mit GIMP ist.;upgrade004;upgrade;50000;3200;15;15,625;3333,333333;;40;40;0;FALSE;FALSE;0;0;;0;0;0
-Highspeed Internet;Der Klingeldraht war ohnehin schon etwas warm geworden. Jetzt gibt es erst mal mit DSL 1600 auf die Fresse.;upgrade005;upgrade;500000;5000;5;100;100000;;40;80;0;FALSE;FALSE;0;0;;0;0;0
-Kristall für deinen PC;Antivir und Kaspersky sind alle schon unterlaufen, aber der gute alte Quartz lässt dich nicht im Stich. Was Menschen heilt, hilft auch PCs.;upgrade006;upgrade;900000;89874;5;10,01401963;180000;;40;150;0;FALSE;FALSE;0;0;;0;0;0
-Banner Kampagne;Eine kurzfristige Kampagne, die deinen Beiträgen mehr Druck verleiht. Die Zielgruppe im Blick und App dafür.;upgrade007;upgrade;2000;250;40;8;50;;40;220;60;true;TRUE;0;0;;0;0;0
-Youtube Account;Ganz neues Publikum tummelt sich hier, niemand mag Texte und Bilder. Videos sind die Zukunft. Bald auch VR!;upgrade008;upgrade;30000;0;5;0;6000;;40;300;0;FALSE;FALSE;0;0;;0;0;0
-Darknet Router;Lächerlich, wie sich manche dem BND preisgeben. Der Darknet Router war ein Schnapper bei ebay, jetzt hört niemand mehr zu.;upgrade009;upgrade;1000000;0;5;0;200000;;40;5;0;FALSE;FALSE;0;0;;0;0;0
+﻿Name;Text;Asset;AssetLayer;Type;CostLikes;FollowerAdd;FollowerPerSecond;cost per follower;cost per FPM;Tags;PostMultiplierAddition;LikeMultiplierAddition;ActiveItemLifetime;IsTemporary;IsUnlimited;RemainingBuys;EventTags;Hashtag;HashtagUsages;HashtagUsagesPerSeconds;HashtagFollower
+Reptiloidenschuppe 1;Beweis, dass der Ortsvorstand Horst Bindemacher der CSU ein Reptiloid ist.;hashtag001;;Hashtag;400;5;1;16;400;;10;0;0;FALSE;TRUE;0;;#Reptiloiden sind unter uns!;5;0;
+Reptiloidenschuppe 2;Endlich kannst du beweisen, dass der Bürgermeister der Stadt Essen ein Reptiloid ist.;hashtag002;;Hashtag;4000;60;12;3,333333333;333,3333333;;40;0;0;FALSE;TRUE;0;;Die Augen des Bürgermeisters #Reptiloid;20;0;
+Reptiloidenschuppe 3;Es ist vollbracht! Im Schlaf konntet ihr der Präsidentenreptiloiden der BRD GmbH diese Schuppe entreissen. JETZT WERDEN DIR ALLE GLAUBEN.;hashtag003;;Hashtag;40000;700;150;0,714285714;266,6666667;;100;0;0;FALSE;TRUE;0;;Merkel ist ein #Reptiloid!;80;0;
+Flat Earth Globus;Beim einer Versteigerung dem alten Erzfeind aus dem Schrebergarten abgerungen. Er zeigt eindeutig, dass die Erde eine Scheibe ist.;hashtag004;;Hashtag;300;5;1;12;300;;15;0;0;FALSE;TRUE;0;;#Flatearth ist real, ihr Hater;5;0;
+GEZ Zwangsgebühren;Wer Gebühren bezahlt, darf sich beschweren. Und in diesem Falle über Merkel.;hashtag005;;Hashtag;400;12;1;3,333333333;400;;30;0;0;FALSE;TRUE;0;;#DankeMerkel;10;0;
+Ziegelstein;Der Stein weißt deutliche Wasseradern auf, es kann sich nur um die Freimaurer handeln;hashtag006;;Hashtag;666;24;2;5,55;333;;13;0;0;FALSE;TRUE;0;;Wasseradern! Der Beweis! #Freimaurer;5;0;
+Pendel;Beweis für eigentlich alles, wenn man es richtig einsetzt.;hashtag007;;Hashtag;1000;50;5;4;200;;13;0;0;FALSE;TRUE;0;;Ausgependelt! #Lügenpresse!;5;0;
+gefälschter Mondstein;Aus dem Raumfahrtzentrum Finkdenwerder gestohlen, es handelt eigentlich nur um Dreck in Staniolapier. Hast du zumindest so erpendelt.;hashtag008;;Hashtag;500;30;2;3,333333333;250;;90;0;0;FALSE;TRUE;0;;Da war niemand. #Moonlanding;5;0;5
+Geldschein (Dollar);Auf ebay gekauft, weil selbst fliegen Chemtrails unterstützt: Darauf kann man genau sehen, dass die Illuminaten alles im Griff haben.;hashtag009;;Hashtag;50;9;1;0,185185185;50;;130;0;0;FALSE;TRUE;0;;Danke Dan Brown! #Illuminati;30;0;100
+Essigessenz;Kann kurzfristig die Wolkendecke öffnen, riecht leider etwas streng.;counter001;;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;chemtrail;;0;0;0
+Essigverteiler;Schützt dich vor groß angelegten Chemtrail aktionen, permanent;counter002;;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;chemtrail;;0;0;0
+Orgon-Cloudbuster;Kann zum Reverse-Geo-Engineering genutzt werden. Schützt permanent vor Chemtrails, künstlichem Wetter und sieht auch einfach verdammt gut aus.;counter003;;Counter;200;0;0;0;0;;0;0;0;FALSE;FALSE;0;wetter;;0;0;0
+Alufolie;Schützt vor akuten kosmischen Strahlungen, Gedankenwellen und Niederfrequenzrauschen. Wird dabei leider kontaminiert und strapaziert.;counter004;;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;strahlung;;0;0;0
+Alufolie, Wabenstruktur;Besser als ihre glatte Schwester, hält deutlich länger.;counter007;;Counter;900;0;0;0;0;;0;0;240;TRUE;FALSE;0;strahlung;;0;0;0
+Dodekaeder;Schützt vor flimmern der fünften Herzkammer;counter005;;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;kammerflimmern;;0;0;0
+Dodekaeder, REINES GOLD;Schützt dich permanent von der fiesen Tachyonenkanone der Bundeswehr.;counter008;;Counter;1200;0;0;0;0;;0;0;0;FALSE;FALSE;0;kammerflimmern;;0;0;0
+Augentropfen;Schützen vor der Lügenpresse und den anderen öffentlich rechtlichen Rundfunkanstalten.;counter006;;Counter;200;0;0;0;0;;0;0;60;TRUE;FALSE;0;presse;;0;0;0
+Aluhut;Sieht gut aus, schützt vor Gehirnwellen Download und Upload ;madness001;;madness;23;0;0;0;0;;5;0;0;FALSE;FALSE;0;;;0;0;0
+Wünschelroute;Standard in jedem Zweiflerhaushalt. Wasseradern und Energiefelder lassen sich easy lokalisieren.;madness002;;madness;2500;0;0;0;0;;10;0;0;FALSE;FALSE;0;;;0;0;0
+Pendel;Wenn es um nicht messbare Strahlung geht, kann nur ein pendel helfen.;madness003;;madness;8000;0;0;0;0;;30;0;0;FALSE;FALSE;0;;;0;0;0
+Reichsbürgerurkunde;Nur damit seid ihr wirklich unabhängig und könnt frei denken, Tschüss BRD GmbH!;madness004;;madness;75000;0;0;0;0;;90;0;0;FALSE;FALSE;0;;;0;0;0
+doppelt-gewickelter Aluhut;Stabiler als der Vorgänger, macht euch immunerer von Gehirnwellenmanipulation.;madness005;;madness;250000;0;0;0;0;;180;0;0;FALSE;FALSE;0;;;0;0;0
+Orgonit, Pyramide;Eine Raumpyramide für die knapp 30 Quadrameter, die dein Reich sind. Keine ungewollte Ionisierung mehr.;madness006;;madness;900000;0;0;0;0;;320;0;0;FALSE;FALSE;0;;;0;0;0
+Energiesteine im Glas;Die Energiesteine hydratisieren das Wasser und befreien sie von toxiziionistischen Gefahrstoffen. Sturm im Glas!;madness007;;madness;1300000;0;0;0;0;;900;0;0;FALSE;FALSE;0;;;0;0;0
+Orgon Akkumulator;Der Bentley unter den Orgoniten. Du kannst dich und mit etwas Geschick eine zweite Person vor den Strahlungen schützen und dich ausgiebig aufladen.;madness008;;madness;1900000;0;0;0;0;;1500;0;0;FALSE;FALSE;0;;;0;0;0
+Blog;Dein erster Blog! Mit kostenlosem Webspace, animierten GIFs und auch einem Gästebuch. ;upgrade001;;upgrade;50;50;1;1;50;;5;5;0;FALSE;FALSE;0;0;;0;0;0
+Kurznachrichtendienst;Erst mal dieses Twatter gekauft. Wurde aber auch Zeit, diese hundertundvierzig Zeichen sind deine Welt.;upgrade002;;upgrade;500;900;5;0,555555556;100;;10;10;0;FALSE;FALSE;0;0;;0;0;0
+Gesichtsbuch;Der Datenkrake einen Strich durch die Rechnung gemacht: Mit diesem voll bestückten Fake Profil lässt sich so viel sharen und liken.;upgrade003;;upgrade;5000;1600;8;3,125;625;;20;20;0;FALSE;FALSE;0;0;;0;0;0
+Profilbild (Ei);Dein Profil wird glaubhafter, wenn du ein Ei als Avatar nutzt. Zum Glück kennst du jemanden, der geschickt mit GIMP ist.;upgrade004;;upgrade;50000;3200;15;15,625;3333,333333;;40;40;0;FALSE;FALSE;0;0;;0;0;0
+Highspeed Internet;Der Klingeldraht war ohnehin schon etwas warm geworden. Jetzt gibt es erst mal mit DSL 1600 auf die Fresse.;upgrade005;;upgrade;500000;5000;5;100;100000;;40;80;0;FALSE;FALSE;0;0;;0;0;0
+Kristall für deinen PC;Antivir und Kaspersky sind alle schon unterlaufen, aber der gute alte Quartz lässt dich nicht im Stich. Was Menschen heilt, hilft auch PCs.;upgrade006;;upgrade;900000;89874;5;10,01401963;180000;;40;150;0;FALSE;FALSE;0;0;;0;0;0
+Banner Kampagne;Eine kurzfristige Kampagne, die deinen Beiträgen mehr Druck verleiht. Die Zielgruppe im Blick und App dafür.;upgrade007;;upgrade;2000;250;40;8;50;;40;220;60;true;TRUE;0;0;;0;0;0
+Youtube Account;Ganz neues Publikum tummelt sich hier, niemand mag Texte und Bilder. Videos sind die Zukunft. Bald auch VR!;upgrade008;;upgrade;30000;0;5;0;6000;;40;300;0;FALSE;FALSE;0;0;;0;0;0
+Darknet Router;Lächerlich, wie sich manche dem BND preisgeben. Der Darknet Router war ein Schnapper bei ebay, jetzt hört niemand mehr zu.;upgrade009;;upgrade;1000000;0;5;0;200000;;40;5;0;FALSE;FALSE;0;0;;0;0;0

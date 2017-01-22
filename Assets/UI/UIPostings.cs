@@ -10,6 +10,7 @@ public class UIPostings : MonoBehaviour
     public int OnlyShowNth = 2;
     public int OnlyShowNthSelector = 0;
     public int Take = 50;
+    public int Limit = 20;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,7 @@ public class UIPostings : MonoBehaviour
         {
             foreach (Transform it in transform) GameObject.Destroy(it.gameObject);
             int idx = 0;
+            int limit = Limit;
             foreach (var it in lNew.Take(Take))
             {
                 if (idx % OnlyShowNth == OnlyShowNthSelector)
@@ -24,6 +26,12 @@ public class UIPostings : MonoBehaviour
                     var go = GameObject.Instantiate(Prefab) as GameObject;
                     go.GetComponent<UIPosting>().Posting = it;
                     go.transform.SetParent(transform);
+					go.transform.localPosition = Vector3.zero;
+					go.transform.localScale = Vector3.one;
+					go.transform.localEulerAngles = Vector3.zero;
+
+                    --limit;
+                    if (limit <= 0) break;
                 }
                 ++idx;
             }
