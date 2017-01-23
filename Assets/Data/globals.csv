@@ -1,2 +1,2 @@
-timeoutPostingMin;timeoutPostingMax;maxUnreadPostings;eventTimeoutMin;eventTimeoutMax;CreatePostLikeValueMultiplierIncPerSecond
-1;3;50;30;90;0.01
+﻿timeoutPostingMin;timeoutPostingMax;maxUnreadPostings;eventTimeoutMin;eventTimeoutMax;CreatePostLikeValueMultiplierIncPerSecond
+1;3;50;240;320;0.01
